@@ -1,22 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import SignUp from './pages/caregiver/signUp/SignUp';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Text } from "./src/design-system";
+import { HomePage } from "./src/pages/HomePage";
+import { useFonts } from "expo-font";
+import { SignUpPage } from "./src/pages/SignUpPage";
+import { RootStackParamList } from "./src/types/RootStackParamList ";
+import { customFonts } from "./src/utils/customFonts";
 
 export default function App() {
+  const Stack = createNativeStackNavigator<RootStackParamList>();
+
+  const [isFontsLoaded] = useFonts(customFonts);
+
+  if (!isFontsLoaded) {
+    return <Text>Loading...</Text>;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Hello World!</Text>
-      <StatusBar style="auto" />
-      <SignUp></SignUp>
-    </View>
+    // To learn more about navigation: https://reactnavigation.org/
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="Home" component={HomePage} />
+        <Stack.Screen
+          name="SignUp"
+          component={SignUpPage}
+          initialParams={{ isCareGiver: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
