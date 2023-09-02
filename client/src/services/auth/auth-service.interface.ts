@@ -4,9 +4,9 @@ import { SmsProvider } from "../../auth/sms/sms-provider.interface";
 
 export abstract class AuthService {
   constructor(
-    protected readonly google: OAuthProvider,
-    protected readonly sms: SmsProvider,
-    protected readonly emailPassword: EmailPassword
+    public readonly google: OAuthProvider,
+    public readonly sms: SmsProvider,
+    public readonly emailPassword: EmailPassword
   ) {}
 
   abstract isLoggedIn(): Promise<boolean>;

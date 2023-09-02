@@ -9,6 +9,7 @@ export class SupabaseSmsProvider implements SmsProvider {
 
     return !!error;
   }
+
   async verify(phoneNumber: string, codeFromSms: string): Promise<boolean> {
     const { error } = await supabase.auth.verifyOtp({
       phone: phoneNumber,
