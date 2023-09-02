@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "DoCare",
     "name": "MyExpoApp",
     "slug": "MyExpoApp",
     "version": "1.0.0",
