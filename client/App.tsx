@@ -4,6 +4,7 @@ import { Text } from "./src/design-system";
 import { HomePage } from "./src/pages/HomePage";
 import { useFonts } from "expo-font";
 import { SignUpPage } from "./src/pages/SignUpPage";
+import { RootStackParamList } from "./src/types/RootStackParamList ";
 
 // Still waiting for UI to send the correct fonts
 const customFonts = {
@@ -12,10 +13,11 @@ const customFonts = {
 };
 
 export default function App() {
-  const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator<RootStackParamList>();
 
-  const [isLoaded] = useFonts(customFonts);
-  if (!isLoaded) {
+  const [isFontsLoaded] = useFonts(customFonts);
+
+  if (!isFontsLoaded) {
     return <Text>Loading...</Text>;
   }
 
@@ -28,7 +30,11 @@ export default function App() {
         }}
       >
         <Stack.Screen name="Home" component={HomePage} />
-        <Stack.Screen name="SignUp" component={SignUpPage} />
+        <Stack.Screen
+          name="SignUp"
+          component={SignUpPage}
+          initialParams={{ isCareGiver: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

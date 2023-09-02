@@ -1,14 +1,25 @@
-import { Button, Text, Image, View } from "../design-system";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { Text, Image, View } from "../design-system";
+import { RootStackParamList } from "../types/RootStackParamList ";
+import { useScreenSize } from "../hooks/useScreenSize";
 
-export const SignUpPage = () => {
+export type SignUpPageProps = {
+  isCareGiver: boolean;
+};
+
+export const SignUpPage = ({
+  route,
+}: NativeStackScreenProps<RootStackParamList, "SignUp">) => {
+  const { isCareGiver } = route.params;
+  const { height } = useScreenSize();
+
   return (
-    <>
+    <View alignItems="center">
       <Image
-        marginLeft={20}
-        marginTop="35%"
+        marginTop={height * 0.25}
         source={require("../../assets/images/logo.png")}
       />
-      <Text>Sign Up Page</Text>
-    </>
+      <Text>SignUp as {isCareGiver ? "CareGiver" : "Supporter"}</Text>
+    </View>
   );
 };

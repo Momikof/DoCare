@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     // fontFamily: "Anomalia",
     color: "#1F1F1F",
     fontSize: 30,
-    lineHeight: 39,
+    lineHeight: 40,
     letterSpacing: -0.3,
     fontWeight: "500",
     textAlign: "center",
