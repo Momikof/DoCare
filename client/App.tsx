@@ -5,12 +5,7 @@ import { HomePage } from "./src/pages/HomePage";
 import { useFonts } from "expo-font";
 import { SignUpPage } from "./src/pages/SignUpPage";
 import { RootStackParamList } from "./src/types/RootStackParamList ";
-
-// Still waiting for UI to send the correct fonts
-const customFonts = {
-  Anomalia: require("./assets/fonts/Anomalia.ttf"),
-  AnomaliaBold: require("./assets/fonts/AnomaliaBold.ttf"),
-};
+import { customFonts } from "./src/utils/customFonts";
 
 export default function App() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
