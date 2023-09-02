@@ -1,11 +1,11 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Text } from "./src/design-system";
-import { HomePage } from "./src/pages/HomePage";
+import { Homepage } from "./src/pages/common/homepage/Homepage";
 import { useFonts } from "expo-font";
-import { SignUpPage } from "./src/pages/SignUpPage";
 import { RootStackParamList } from "./src/types/RootStackParamList ";
 import { customFonts } from "./src/utils/customFonts";
+import { AuthenticationScreen } from "./src/pages/common/authenticationScreen/AuthenticationScreen";
 
 export default function App() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -24,11 +24,10 @@ export default function App() {
           headerShown: false,
         }}
       >
-        <Stack.Screen name="Home" component={HomePage} />
+        <Stack.Screen name="Homepage" component={Homepage} />
         <Stack.Screen
-          name="SignUp"
-          component={SignUpPage}
-          initialParams={{ isCareGiver: false }}
+          name="AuthenticationScreen"
+          component={AuthenticationScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback, useState } from "react";
 import { View, TextInput, Button, Text, StyleSheet } from "react-native";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { supabase } from "../../../utils/supabase";
+import { supabase } from "../../../src/store/supabase";
 
 type SignUpFormValues = {
   name: string;
