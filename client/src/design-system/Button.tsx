@@ -29,7 +29,7 @@ export const Button = ({
   );
 };
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   button: {
     width: "90%",
     padding: 16,
