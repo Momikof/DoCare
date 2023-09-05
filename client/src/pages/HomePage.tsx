@@ -34,7 +34,7 @@ export const HomePage = ({
         <Text varinat="secondary">כאן תמיד לעזרה בלחיצה</Text>
       </View>
       <Button
-        text="כניסה כ- CAREGIVER"
+        text="התחבר/י לחשבון"
         onPress={() => navigation.navigate("SignUp", { isCareGiver: true })}
         buttonStyle={{ marginTop: height * 0.1, backgroundColor: "#FFFEF9" }}
       />

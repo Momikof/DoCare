@@ -1,40 +1,73 @@
 import { StyleSheet, TextStyle, Text as NativeText } from "react-native";
+import { isUndefined } from "lodash";
 
 type TextProps = {
   varinat?: "title" | "secondary" | "button";
 } & TextStyle &
   React.PropsWithChildren;
 
-export const Text = ({ children, varinat = "title", ...props }: TextProps) => {
+type FontWeight =
+  | "normal"
+  | "bold"
+  | "100"
+  | "200"
+  | "300"
+  | "400"
+  | "500"
+  | "600"
+  | "700"
+  | "800"
+  | "900"
+  | undefined;
+
+const makeTextBold = (fontWeight: FontWeight) => {
+  if (isUndefined(fontWeight)) {
+    return {};
+  }
+
+  return { fontFamily: fontWeight === "bold" ? "AnomaliaBold" : "Anomalia" };
+};
+
+export const Text = ({
+  children,
+  varinat = "title",
+  fontWeight,
+  ...props
+}: TextProps) => {
   return (
-    <NativeText style={{ ...styles[varinat], ...props }}>{children}</NativeText>
+    <NativeText
+      style={{
+        ...styles[varinat],
+        ...props,
+        ...makeTextBold(fontWeight),
+      }}
+    >
+      {children}
+    </NativeText>
   );
 };
 
 const styles = StyleSheet.create({
   title: {
-    // fontFamily: "Anomalia",
+    fontFamily: "AnomaliaBold",
     color: "#1F1F1F",
     fontSize: 30,
     lineHeight: 40,
     letterSpacing: -0.3,
-    fontWeight: "500",
     textAlign: "center",
   },
   button: {
-    // fontFamily: "Anomalia",
+    fontFamily: "AnomaliaBold",
     color: "#1F1F1F",
     fontSize: 16,
     lineHeight: 20,
-    fontWeight: "500",
     textAlign: "center",
   },
   secondary: {
-    // fontFamily: "Anomalia",
+    fontFamily: "Anomalia",
     color: "rgba(0, 0, 0, 0.70)",
     fontSize: 16,
     lineHeight: 20,
-    fontWeight: "300",
     textAlign: "center",
   },
 });
