@@ -18,12 +18,12 @@ export const HomePage = ({
   const { height } = useScreenSize();
 
   const onSignUpClick = useCallback(
-    () => navigation.navigate("SignUp", { isCareGiver: false }),
+    () => navigation.navigate("Roles"),
     [navigation]
   );
 
   return (
-    <View alignItems="center">
+       <View alignItems="center">
       <Image
         marginTop={height * 0.25}
         source={require("../../assets/images/logo.png")}
@@ -40,5 +40,6 @@ export const HomePage = ({
       />
       <SignUpButton onClick={onSignUpClick} />
     </View>
+   
   );
 };

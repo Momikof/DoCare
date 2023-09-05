@@ -4,4 +4,5 @@ import { SignUpPageProps } from "../pages/SignUpPage";
 export type RootStackParamList = {
     Home: undefined,
     SignUp: SignUpPageProps,
+    Roles: undefined,
 }
