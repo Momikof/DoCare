@@ -3,6 +3,11 @@ import { supabase } from "../../supabase";
 import { OAuthProvider } from "./oauth-provider.interface";
 import * as Linking from "expo-linking";
 
+type Tokens = {
+  accessToken: string;
+  refreshToken: string;
+}
+
 export class SupabaseOAuthProvider extends OAuthProvider {
   async signIn(): Promise<boolean> {
     const redirectUrl = Linking.createURL("/?");
@@ -40,7 +45,7 @@ export class SupabaseOAuthProvider extends OAuthProvider {
     await supabase.auth.signOut({ scope: "global" });
   }
 
-  private extractTokens(url: string) {
+  private extractTokens(url: string): Tokens {
     const splitedUrlParams = url
       .split("&")
       .map((param) => param.split("="))

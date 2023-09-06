@@ -1,5 +1,6 @@
 import { supabase } from "../../supabase";
 import { SmsProvider } from "./sms-provider.interface";
+import _ from 'lodash';
 
 export class SupabaseSmsProvider implements SmsProvider {
   async signIn(phoneNumber: string): Promise<boolean> {
@@ -7,7 +8,7 @@ export class SupabaseSmsProvider implements SmsProvider {
       phone: phoneNumber,
     });
 
-    return !!error;
+    return _.isEmpty(error);
   }
 
   async verify(phoneNumber: string, codeFromSms: string): Promise<boolean> {
@@ -17,6 +18,6 @@ export class SupabaseSmsProvider implements SmsProvider {
       type: "sms",
     });
 
-    return !!error;
+    return _.isEmpty(error);
   }
 }

@@ -6,6 +6,7 @@ import { SmsProvider } from "../../auth/sms/sms-provider.interface";
 import { SupabaseSmsProvider } from "../../auth/sms/supabase.sms-provider";
 import { supabase } from "../../supabase";
 import { AuthService } from "./auth-service.interface";
+import _ from "lodash";
 
 export class SupabaseAuthService extends AuthService {
   constructor() {
@@ -16,7 +17,7 @@ export class SupabaseAuthService extends AuthService {
     );
   }
   async isLoggedIn(): Promise<boolean> {
-    return !!(await supabase.auth.getUser()).data;
+    return _.isEmpty((await supabase.auth.getUser()).data);
   }
 
   async signOut(): Promise<void> {
