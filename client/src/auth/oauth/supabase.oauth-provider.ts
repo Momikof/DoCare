@@ -41,10 +41,6 @@ export class SupabaseOAuthProvider extends OAuthProvider {
     return true;
   }
 
-  async logout() {
-    await supabase.auth.signOut({ scope: "global" });
-  }
-
   private extractTokens(url: string): Tokens {
     const splitedUrlParams = url
       .split("&")
