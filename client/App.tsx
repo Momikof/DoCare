@@ -6,8 +6,16 @@ import { useFonts } from "expo-font";
 import { SignUpPage } from "./src/pages/SignUpPage";
 import { RootStackParamList } from "./src/types/RootStackParamList ";
 import { customFonts } from "./src/utils/customFonts";
+import { useEffect } from "react";
+import { coolDownAsync, warmUpAsync } from "expo-web-browser";
 
 export default function App() {
+  useEffect(() => {
+    warmUpAsync();
+    return () => {
+      coolDownAsync();
+    };
+  }, []);
   const Stack = createNativeStackNavigator<RootStackParamList>();
 
   const [isFontsLoaded] = useFonts(customFonts);
