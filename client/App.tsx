@@ -6,11 +6,8 @@ import { useFonts } from "expo-font";
 import { SignUpPage } from "./src/pages/SignUpPage";
 import { RootStackParamList } from "./src/types/RootStackParamList ";
 import { customFonts } from "./src/utils/customFonts";
-<<<<<<< HEAD
 import { StatusBar } from "react-native";
-=======
 import { RolePage } from "./src/pages/RolePage";
->>>>>>> 15de9602e3497b68eb23a7bc34c25bf76e413cf2
 
 export default function App() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -21,8 +18,8 @@ export default function App() {
     return <Text>Loading...</Text>;
   }
 
+  // To learn more about navigation: https://reactnavigation.org/
   return (
-<<<<<<< HEAD
     <>
       <StatusBar />
       <NavigationContainer>
@@ -32,6 +29,7 @@ export default function App() {
           }}
         >
           <Stack.Screen name="Home" component={HomePage} />
+          <Stack.Screen name="Roles" component={RolePage} />
           <Stack.Screen
             name="SignUp"
             component={SignUpPage}
@@ -40,23 +38,5 @@ export default function App() {
         </Stack.Navigator>
       </NavigationContainer>
     </>
-=======
-    // To learn more about navigation: https://reactnavigation.org/
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="Home" component={HomePage} />
-        <Stack.Screen name="Roles" component={RolePage} />
-        <Stack.Screen
-          name="SignUp"
-          component={SignUpPage}
-          initialParams={{ isCareGiver: false }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
->>>>>>> 15de9602e3497b68eb23a7bc34c25bf76e413cf2
   );
 }

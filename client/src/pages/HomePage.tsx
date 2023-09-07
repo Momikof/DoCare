@@ -4,6 +4,7 @@ import { RootStackParamList } from "../types/RootStackParamList ";
 import { useScreenSize } from "../hooks/useScreenSize";
 import { SignUpButton } from "../components/SignUpButton";
 import { useCallback } from "react";
+import SignUpModal from "../components/SignUpModal";
 
 export const HomePage = ({
   navigation,
@@ -16,20 +17,12 @@ export const HomePage = ({
   );
 
   return (
-<<<<<<< HEAD
     <View alignItems="center">
-      <Modal>
-        <View>
-          <Text>Test</Text>
-        </View>
-      </Modal>
-=======
-       <View alignItems="center">
->>>>>>> 15de9602e3497b68eb23a7bc34c25bf76e413cf2
       <Image
         marginTop={height * 0.25}
         source={require("../../assets/images/logo.png")}
       />
+      <SignUpModal />
       <Text marginTop={height * 0.075}>היי, ברוכים הבאים (:</Text>
       <View marginTop={height * 0.015} alignItems="center">
         <Text varinat="secondary">הגעתם לDOCARE</Text>
@@ -42,6 +35,5 @@ export const HomePage = ({
       />
       <SignUpButton onClick={onSignUpClick} />
     </View>
-   
   );
 };
