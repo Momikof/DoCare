@@ -6,6 +6,7 @@ import { useFonts } from "expo-font";
 import { SignUpPage } from "./src/pages/SignUpPage";
 import { RootStackParamList } from "./src/types/RootStackParamList ";
 import { customFonts } from "./src/utils/customFonts";
+import { StatusBar } from "react-native";
 
 export default function App() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -17,20 +18,22 @@ export default function App() {
   }
 
   return (
-    // To learn more about navigation: https://reactnavigation.org/
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="Home" component={HomePage} />
-        <Stack.Screen
-          name="SignUp"
-          component={SignUpPage}
-          initialParams={{ isCareGiver: false }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <>
+      <StatusBar />
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="Home" component={HomePage} />
+          <Stack.Screen
+            name="SignUp"
+            component={SignUpPage}
+            initialParams={{ isCareGiver: false }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
   );
 }

@@ -1,14 +1,7 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import {
-  Button,
-  Text,
-  Image,
-  View,
-  styles as buttonStyles,
-} from "../design-system";
+import { Button, Text, Image, View, Modal } from "../design-system";
 import { RootStackParamList } from "../types/RootStackParamList ";
 import { useScreenSize } from "../hooks/useScreenSize";
-import { Pressable } from "../design-system/Pressable";
 import { SignUpButton } from "../components/SignUpButton";
 import { useCallback } from "react";
 
@@ -24,6 +17,11 @@ export const HomePage = ({
 
   return (
     <View alignItems="center">
+      <Modal>
+        <View>
+          <Text>Test</Text>
+        </View>
+      </Modal>
       <Image
         marginTop={height * 0.25}
         source={require("../../assets/images/logo.png")}

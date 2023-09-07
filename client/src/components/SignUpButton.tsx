@@ -1,5 +1,5 @@
 import { Text, styles as buttonStyles } from "../design-system";
-import { Pressable } from "../design-system/Pressable";
+import { Pressable } from "../design-system";
 import { useScreenSize } from "../hooks/useScreenSize";
 
 type SignUpButtonProps = {
