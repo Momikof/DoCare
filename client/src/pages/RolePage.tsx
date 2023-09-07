@@ -28,7 +28,11 @@ export const RolePage = ({
           onPress={() => {}}
           style={{ marginTop: height * 0.18, backgroundColor: "#A99CFE" }}
         />
-        <Button text="כניסה כתמוך" onPress={() => {}} />
+        <Button
+          text="כניסה כתמוך"
+          textStyle={{ color: "#FFFEF9" }}
+          onPress={() => {}}
+        />
       </View>
     </View>
   );

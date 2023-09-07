@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { Button, TextInput } from "../design-system";
-import { Formik } from "formik";
+import { Formik } from "for mik";
 import { useScreenSize } from "../hooks/useScreenSize";
 
 import * as Yup from "yup";
@@ -20,7 +20,7 @@ export default function ReviewForm() {
   const { height, width } = useScreenSize();
   return (
     <View style={{ alignItems: "center" }}>
-      <ReactNativeModal>
+      {/* <ReactNativeModal>
         <View style={{ backgroundColor: "#EFE7FF" }}>
           <Formik
             initialValues={{ name: "", number: "" }}
@@ -37,7 +37,6 @@ export default function ReviewForm() {
                   onChangeText={props.handleChange("name")}
                   value={props.values.name}
                 />
-                {/* only if the left value is a valid string, will the right value be displayed */}
                 <Text>{props.touched.name && props.errors.name}</Text>
 
                 <TextInput
@@ -59,7 +58,7 @@ export default function ReviewForm() {
             )}
           </Formik>
         </View>
-      </ReactNativeModal>
+      </ReactNativeModal> */}
     </View>
   );
 }

@@ -4,7 +4,6 @@ import { RootStackParamList } from "../types/RootStackParamList ";
 import { useScreenSize } from "../hooks/useScreenSize";
 import { SignUpButton } from "../components/SignUpButton";
 import { useCallback } from "react";
-import SignUpModal from "../components/SignUpModal";
 import { Image, View } from "react-native";
 
 export const HomePage = ({
@@ -23,7 +22,6 @@ export const HomePage = ({
         style={{ marginTop: height * 0.25 }}
         source={require("../../assets/images/logo.png")}
       />
-      <SignUpModal />
       <Text style={{ marginTop: height * 0.075 }}>היי, ברוכים הבאים (:</Text>
       <View style={{ marginTop: height * 0.015, alignItems: "center" }}>
         <Text variant="secondary">הגעתם לDOCARE</Text>

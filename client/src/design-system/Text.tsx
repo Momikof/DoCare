@@ -1,4 +1,8 @@
-import { TextProps as NativeTextProps, StyleSheet } from "react-native";
+import {
+  Text as NativeText,
+  TextProps as NativeTextProps,
+  StyleSheet,
+} from "react-native";
 
 type TextProps = {
   variant?: keyof typeof styles;
@@ -11,9 +15,9 @@ export const Text = ({
   ...props
 }: TextProps) => {
   return (
-    <Text style={[styles[variant], style]} {...props}>
+    <NativeText style={[styles[variant], style]} {...props}>
       {children}
-    </Text>
+    </NativeText>
   );
 };
 
