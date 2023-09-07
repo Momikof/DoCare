@@ -11,17 +11,21 @@ export const HomePage = ({
   const { height } = useScreenSize();
 
   const onSignUpClick = useCallback(
-    () => navigation.navigate("SignUp", { isCareGiver: false }),
+    () => navigation.navigate("Roles"),
     [navigation]
   );
 
   return (
+<<<<<<< HEAD
     <View alignItems="center">
       <Modal>
         <View>
           <Text>Test</Text>
         </View>
       </Modal>
+=======
+       <View alignItems="center">
+>>>>>>> 15de9602e3497b68eb23a7bc34c25bf76e413cf2
       <Image
         marginTop={height * 0.25}
         source={require("../../assets/images/logo.png")}
@@ -38,5 +42,6 @@ export const HomePage = ({
       />
       <SignUpButton onClick={onSignUpClick} />
     </View>
+   
   );
 };
