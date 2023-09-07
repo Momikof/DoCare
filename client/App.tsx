@@ -16,6 +16,7 @@ export default function App() {
       coolDownAsync();
     };
   }, []);
+  
   const Stack = createNativeStackNavigator<RootStackParamList>();
 
   const [isFontsLoaded] = useFonts(customFonts);
