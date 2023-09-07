@@ -9,7 +9,6 @@ import { customFonts } from "./src/utils/customFonts";
 import { useEffect } from "react";
 import { coolDownAsync, warmUpAsync } from "expo-web-browser";
 
-
 export default function App() {
   useEffect(() => {
     warmUpAsync();
