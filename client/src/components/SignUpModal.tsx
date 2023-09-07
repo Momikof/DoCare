@@ -1,11 +1,12 @@
 import React from "react";
-import { StyleSheet, Text } from "react-native";
-import { Button, View, TextInput, Modal } from "../design-system";
-import { Formik, Form, Field } from "formik";
+import { Text, View } from "react-native";
+import { Button, TextInput } from "../design-system";
+import { Formik } from "formik";
 import { useScreenSize } from "../hooks/useScreenSize";
 
 import * as Yup from "yup";
 import "yup-phone";
+import ReactNativeModal from "react-native-modal";
 
 const reviewSchema = Yup.object().shape({
   name: Yup.string()
@@ -18,9 +19,9 @@ const reviewSchema = Yup.object().shape({
 export default function ReviewForm() {
   const { height, width } = useScreenSize();
   return (
-    <View alignItems="center">
-      <Modal>
-        <View backgroundColor={"#EFE7FF"}>
+    <View style={{ alignItems: "center" }}>
+      <ReactNativeModal>
+        <View style={{ backgroundColor: "#EFE7FF" }}>
           <Formik
             initialValues={{ name: "", number: "" }}
             validationSchema={reviewSchema}
@@ -48,8 +49,8 @@ export default function ReviewForm() {
 
                 <Button
                   text="המשך :)"
-                  onPress={props.handleSubmit}
-                  buttonStyle={{
+                  onPress={() => {}}
+                  style={{
                     marginTop: height * 0.015,
                     backgroundColor: "#EFE7FF",
                   }}
@@ -58,7 +59,7 @@ export default function ReviewForm() {
             )}
           </Formik>
         </View>
-      </Modal>
+      </ReactNativeModal>
     </View>
   );
 }

@@ -1,7 +1,8 @@
 import React from "react";
 import { Alert, Share } from "react-native";
-import { Button, View } from "../design-system";
+import { Button } from "../design-system";
 import { useScreenSize } from "../hooks/useScreenSize";
+import { View } from "react-native";
 
 const ShareExample = () => {
   const { height } = useScreenSize();
@@ -25,11 +26,11 @@ const ShareExample = () => {
     }
   };
   return (
-    <View alignItems="center">
+    <View style={{ alignItems: "center" }}>
       <Button
         text="ספר לחברים"
         onPress={onShare}
-        buttonStyle={{ marginTop: height * 0.1, backgroundColor: "#FFFEF9" }}
+        style={{ marginTop: height * 0.1, backgroundColor: "#FFFEF9" }}
       />
     </View>
   );

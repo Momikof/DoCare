@@ -1,10 +1,11 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Button, Text, Image, View, Modal } from "../design-system";
+import { Button, Text } from "../design-system";
 import { RootStackParamList } from "../types/RootStackParamList ";
 import { useScreenSize } from "../hooks/useScreenSize";
 import { SignUpButton } from "../components/SignUpButton";
 import { useCallback } from "react";
 import SignUpModal from "../components/SignUpModal";
+import { Image, View } from "react-native";
 
 export const HomePage = ({
   navigation,
@@ -17,21 +18,21 @@ export const HomePage = ({
   );
 
   return (
-    <View alignItems="center">
+    <View style={{ alignItems: "center" }}>
       <Image
-        marginTop={height * 0.25}
+        style={{ marginTop: height * 0.25 }}
         source={require("../../assets/images/logo.png")}
       />
       <SignUpModal />
-      <Text marginTop={height * 0.075}>היי, ברוכים הבאים (:</Text>
-      <View marginTop={height * 0.015} alignItems="center">
-        <Text varinat="secondary">הגעתם לDOCARE</Text>
-        <Text varinat="secondary">כאן תמיד לעזרה בלחיצה</Text>
+      <Text style={{ marginTop: height * 0.075 }}>היי, ברוכים הבאים (:</Text>
+      <View style={{ marginTop: height * 0.015, alignItems: "center" }}>
+        <Text variant="secondary">הגעתם לDOCARE</Text>
+        <Text variant="secondary">כאן תמיד לעזרה בלחיצה</Text>
       </View>
       <Button
         text="התחבר/י לחשבון"
         onPress={() => navigation.navigate("SignUp", { isCareGiver: true })}
-        buttonStyle={{ marginTop: height * 0.1, backgroundColor: "#FFFEF9" }}
+        style={{ marginTop: height * 0.1, backgroundColor: "#FFFEF9" }}
       />
       <SignUpButton onClick={onSignUpClick} />
     </View>
