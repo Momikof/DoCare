@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { View, Modal } from "react-native";
+import { View } from "react-native";
 import { Button, TextInput, Text } from "../design-system";
 import { Formik } from "formik";
 import { useScreenSize } from "../hooks/useScreenSize";
 
 import * as Yup from "yup";
 import "yup-phone";
+import { ReactNativeModal } from "react-native-modal";
 
 const reviewSchema = Yup.object().shape({
   name: Yup.string()
@@ -20,7 +21,7 @@ export default function SignUpModal() {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={{ alignItems: "center" }}>
-      <Modal animationType="slide" transparent={true} visible={modalVisible}>
+      <ReactNativeModal isVisible={modalVisible}>
         <View style={{ backgroundColor: "#EFE7FF" }}>
           <Formik
             initialValues={{ name: "", number: "" }}
@@ -61,7 +62,7 @@ export default function SignUpModal() {
             )}
           </Formik>
         </View>
-      </Modal>
+      </ReactNativeModal>
       <Button
         text="הצתרף לקבוצת טיפול קיימת"
         onPress={() => {
