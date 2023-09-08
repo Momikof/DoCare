@@ -29,7 +29,7 @@ export const HomePage = ({
       </View>
       <Button
         text="התחבר/י לחשבון"
-        onPress={() => navigation.navigate("SignUp", { isCareGiver: true })}
+        onPress={() => navigation.navigate("SignIn")}
         style={{ marginTop: height * 0.1, backgroundColor: "#FFFEF9" }}
       />
       <SignUpButton onClick={onSignUpClick} />

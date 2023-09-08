@@ -45,7 +45,7 @@ export default function SignUpModal({
         {(props) => (
           <View style={{ backgroundColor: "#EFE7FF", alignItems: "center" }}>
             <TextInput
-              placeholder="?איך קוראים לך"
+              placeholder="איך קוראים לך?"
               onChangeText={props.handleChange("name")}
               value={props.values.name}
             />
@@ -53,6 +53,7 @@ export default function SignUpModal({
             <Text>{props.touched.name && props.errors.name}</Text>
 
             <TextInput
+              secureTextEntry
               placeholder="מס' הטלפון של הCAREGIVER"
               onChangeText={props.handleChange("number")}
               value={props.values.number}

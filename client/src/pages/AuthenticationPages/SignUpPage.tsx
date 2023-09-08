@@ -5,16 +5,17 @@ import { useScreenSize } from "../../hooks/useScreenSize";
 import { Image, View } from "react-native";
 import { WhiteCircle } from "../../components/WhiteCircle";
 import { IconButton } from "../../design-system";
-
-export type SignUpPageProps = {
-  isCareGiver: boolean;
-};
+import { useCallback } from "react";
 
 export const SignUpPage = ({
-  route,
+  navigation,
 }: NativeStackScreenProps<RootStackParamList, "SignUp">) => {
-  const { isCareGiver } = route.params;
   const { height, width } = useScreenSize();
+
+  const onAlreadySignedClick = useCallback(
+    () => navigation.navigate("SignIn"),
+    [navigation]
+  );
 
   return (
     <View style={{ alignItems: "center" }}>
@@ -59,7 +60,7 @@ export const SignUpPage = ({
         <Text variant="secondary" style={{ fontSize: 14 }}>
           כבר יש לך חשבון?{" "}
         </Text>
-        <Text variant="link" onPress={() => {}}>
+        <Text variant="link" onPress={onAlreadySignedClick}>
           היכנס/י לאפליקציה
         </Text>
       </View>
