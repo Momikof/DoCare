@@ -2,7 +2,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Button, Text } from "../design-system";
 import { RootStackParamList } from "../types/RootStackParamList ";
 import { useScreenSize } from "../hooks/useScreenSize";
-import { SignUpButton } from "../components/SignUpButton";
+import { SignUpButton } from "../components/buttons/SignUpButton";
 import { useCallback } from "react";
 import { Image, View } from "react-native";
 

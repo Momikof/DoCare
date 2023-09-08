@@ -41,4 +41,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 20,
   },
+  link: {
+    fontFamily: "AnomaliaBold",
+    color: "#1F1F1F",
+    lineHeight: 17.5,
+    fontSize: 14,
+    textDecorationStyle: "solid",
+    textDecorationColor: "black",
+    textDecorationLine: "underline",
+  },
 });

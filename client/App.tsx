@@ -1,6 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Text } from "./src/design-system";
 import { HomePage } from "./src/pages/HomePage";
 import { useFonts } from "expo-font";
 import { SignUpPage } from "./src/pages/SignUpPage";
@@ -16,7 +15,7 @@ export default function App() {
   const [isFontsLoaded] = useFonts(customFonts);
 
   if (!isFontsLoaded) {
-    return <Text>Loading...</Text>;
+    return <></>;
   }
 
   // To learn more about navigation: https://reactnavigation.org/

@@ -1,7 +1,7 @@
 import React from "react";
 import { Alert, Share } from "react-native";
-import { Button } from "../design-system";
-import { useScreenSize } from "../hooks/useScreenSize";
+import { Button } from "../../design-system";
+import { useScreenSize } from "../../hooks/useScreenSize";
 import { View } from "react-native";
 
 const ShareExample = () => {

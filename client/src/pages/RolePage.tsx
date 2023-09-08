@@ -4,6 +4,7 @@ import { RootStackParamList } from "../types/RootStackParamList ";
 import { useScreenSize } from "../hooks/useScreenSize";
 import { useCallback } from "react";
 import { Image, View } from "react-native";
+import { SmallLogo } from "../components/SmallLogo";
 
 export const RolePage = ({
   navigation,
@@ -16,14 +17,7 @@ export const RolePage = ({
   );
   return (
     <View>
-      <Image
-        style={{
-          position: "absolute",
-          marginTop: height * 0.06,
-          marginLeft: width * 0.8,
-        }}
-        source={require("../../assets/images/do.png")}
-      />
+      <SmallLogo align={"right"} />
       <View style={{ alignItems: "center" }}>
         <Image
           style={{ marginTop: height * 0.23 }}
