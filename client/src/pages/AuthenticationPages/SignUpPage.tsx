@@ -1,10 +1,10 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Text } from "../design-system";
-import { RootStackParamList } from "../types/RootStackParamList ";
-import { useScreenSize } from "../hooks/useScreenSize";
+import { Text } from "../../design-system";
+import { RootStackParamList } from "../../types/RootStackParamList ";
+import { useScreenSize } from "../../hooks/useScreenSize";
 import { Image, View } from "react-native";
-import { WhiteCircle } from "../components/WhiteCircle";
-import { IconButton } from "../design-system";
+import { WhiteCircle } from "../../components/WhiteCircle";
+import { IconButton } from "../../design-system";
 
 export type SignUpPageProps = {
   isCareGiver: boolean;
@@ -30,7 +30,7 @@ export const SignUpPage = ({
       >
         <WhiteCircle size={width * 0.475} style={{ marginTop: height * 0.085 }}>
           {/* might want to change this image to just be the text flipped, or get a better resultion image @_@ */}
-          <Image source={require("../../assets/images/do-black.png")} />
+          <Image source={require("../../../assets/images/do-black.png")} />
         </WhiteCircle>
         <Text style={{ marginTop: height * 0.065 }}>
           איזה כיף! נרשמים חדשים
@@ -40,17 +40,17 @@ export const SignUpPage = ({
         </Text>
         <IconButton
           text={"כניסה דרך google"}
-          icon={require("../../assets/images/google.png")}
+          icon={require("../../../assets/images/google.png")}
           style={{ marginTop: height * 0.085 }}
         />
         <IconButton
           text={"כניסה באמצעות קוד לנייד"}
-          icon={require("../../assets/images/phone.png")}
+          icon={require("../../../assets/images/phone.png")}
           style={{ marginTop: height * 0.01 }}
         />
         <IconButton
           text={"הרשמה דרך מייל"}
-          icon={require("../../assets/images/mail.png")}
+          icon={require("../../../assets/images/mail.png")}
           style={{ marginTop: height * 0.01 }}
         />
       </View>

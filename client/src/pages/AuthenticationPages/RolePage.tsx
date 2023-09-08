@@ -1,11 +1,11 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Button } from "../design-system";
-import { RootStackParamList } from "../types/RootStackParamList ";
-import { useScreenSize } from "../hooks/useScreenSize";
+import { Button } from "../../design-system";
+import { RootStackParamList } from "../../types/RootStackParamList ";
+import { useScreenSize } from "../../hooks/useScreenSize";
 import { useCallback } from "react";
 import { Image, View } from "react-native";
-import { SmallLogo } from "../components/SmallLogo";
-import SignUpModal from "../components/SignUpModal";
+import { SmallLogo } from "../../components/SmallLogo";
+import SignUpModal from "../../components/SignUpModal";
 import React, { useState } from "react";
 
 export const RolePage = ({
@@ -22,7 +22,7 @@ export const RolePage = ({
       <View style={{ alignItems: "center" }}>
         <Image
           style={{ marginTop: height * 0.23 }}
-          source={require("../../assets/images/Group.png")}
+          source={require("../../../assets/images/Group.png")}
         />
         <Button
           text="כניסה כ- CAREGIVER"
