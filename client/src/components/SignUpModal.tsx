@@ -1,12 +1,11 @@
-import React from "react";
-import { Text, View } from "react-native";
-import { Button, TextInput } from "../design-system";
-import { Formik } from "for mik";
+import React, { useState } from "react";
+import { View, Modal } from "react-native";
+import { Button, TextInput, Text } from "../design-system";
+import { Formik } from "formik";
 import { useScreenSize } from "../hooks/useScreenSize";
 
 import * as Yup from "yup";
 import "yup-phone";
-import ReactNativeModal from "react-native-modal";
 
 const reviewSchema = Yup.object().shape({
   name: Yup.string()
@@ -16,11 +15,12 @@ const reviewSchema = Yup.object().shape({
   number: Yup.string().matches(new RegExp("[0-9]{7}")).required("Required"),
 });
 
-export default function ReviewForm() {
+export default function SignUpModal() {
   const { height, width } = useScreenSize();
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={{ alignItems: "center" }}>
-      {/* <ReactNativeModal>
+      <Modal animationType="slide" transparent={true} visible={modalVisible}>
         <View style={{ backgroundColor: "#EFE7FF" }}>
           <Formik
             initialValues={{ name: "", number: "" }}
@@ -33,14 +33,15 @@ export default function ReviewForm() {
             {(props) => (
               <View>
                 <TextInput
-                  placeholder="Review title"
+                  placeholder="איך קוראים לך"
                   onChangeText={props.handleChange("name")}
                   value={props.values.name}
                 />
+                {/* only if the left value is a valid string, will the right value be displayed */}
                 <Text>{props.touched.name && props.errors.name}</Text>
 
                 <TextInput
-                  placeholder="Review details"
+                  placeholder="מס' הטלפון של הCAREGIVER"
                   onChangeText={props.handleChange("number")}
                   value={props.values.number}
                 />
@@ -48,7 +49,9 @@ export default function ReviewForm() {
 
                 <Button
                   text="המשך :)"
-                  onPress={() => {}}
+                  onPress={() => {
+                    setModalVisible(false);
+                  }}
                   style={{
                     marginTop: height * 0.015,
                     backgroundColor: "#EFE7FF",
@@ -58,7 +61,18 @@ export default function ReviewForm() {
             )}
           </Formik>
         </View>
-      </ReactNativeModal> */}
+      </Modal>
+      <Button
+        text="הצתרף לקבוצת טיפול קיימת"
+        onPress={() => {
+          setModalVisible(true);
+        }}
+        style={{
+          width: width * 0.4,
+          height: height * 0.14,
+          backgroundColor: "#FFFEF9",
+        }}
+      />
     </View>
   );
 }

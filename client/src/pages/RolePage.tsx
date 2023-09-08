@@ -2,12 +2,18 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Button } from "../design-system";
 import { RootStackParamList } from "../types/RootStackParamList ";
 import { useScreenSize } from "../hooks/useScreenSize";
+import { useCallback } from "react";
 import { Image, View } from "react-native";
 
 export const RolePage = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList, "Roles">) => {
   const { height, width } = useScreenSize();
+
+  const onSignUpClick = useCallback(
+    () => navigation.navigate("SignCaregiver"),
+    [navigation]
+  );
   return (
     <View>
       <Image
@@ -29,9 +35,9 @@ export const RolePage = ({
           style={{ marginTop: height * 0.18, backgroundColor: "#A99CFE" }}
         />
         <Button
-          text="כניסה כתמוך"
-          textStyle={{ color: "#FFFEF9" }}
-          onPress={() => {}}
+          text="הרשמה כתומך"
+          onPress={onSignUpClick}
+          style={{ marginTop: height * 0.015, backgroundColor: "#EFE7FF" }}
         />
       </View>
     </View>
