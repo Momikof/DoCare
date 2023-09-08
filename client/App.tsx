@@ -7,7 +7,6 @@ import { RootStackParamList } from "./src/types/RootStackParamList ";
 import { customFonts } from "./src/utils/customFonts";
 import { StatusBar } from "react-native";
 import { RolePage } from "./src/pages/AuthenticationPages/RolePage";
-import { SignUpCaregiver } from "./src/pages/AuthenticationPages/SignUpCaregiver";
 
 export default function App() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
