@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { View } from "react-native";
 import { Button, TextInput, Text } from "../design-system";
 import { Formik } from "formik";
@@ -29,6 +28,7 @@ export default function SignUpModal({
 
   return (
     <ReactNativeModal
+      style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
       isVisible={isVisible}
       onBackdropPress={() => {
         setIsVisible(false);
@@ -43,21 +43,32 @@ export default function SignUpModal({
         }}
       >
         {(props) => (
-          <View style={{ backgroundColor: "#EFE7FF", alignItems: "center" }}>
+          <View
+            style={{
+              backgroundColor: "#EFE7FF",
+              alignItems: "center",
+              width: width * 0.95,
+              height: height * 0.35,
+              borderRadius: 10,
+              borderWidth: 1,
+              borderColor: "#1F1F1F",
+            }}
+          >
             <TextInput
-              placeholder="?איך קוראים לך"
+              style={{ marginTop: height * 0.05 }}
+              placeholder="איך קוראים לך?"
               onChangeText={props.handleChange("name")}
               value={props.values.name}
             />
-            {/* only if the left value is a valid string, will the right value be displayed */}
-            <Text>{props.touched.name && props.errors.name}</Text>
-
-            <TextInput
-              placeholder="מס' הטלפון של הCAREGIVER"
-              onChangeText={props.handleChange("number")}
-              value={props.values.number}
-            />
-            <Text>{props.touched.number && props.errors.number}</Text>
+            <View style={{ flexDirection: "row" }}>
+              <TextInput
+                keyboardType="numeric"
+                style={{ marginTop: height * 0.015, flex: 1 }}
+                placeholder="מס' הטלפון של הCAREGIVER"
+                onChangeText={props.handleChange("number")}
+                value={props.values.number}
+              />
+            </View>
 
             <Button
               text="המשך :)"
@@ -66,8 +77,9 @@ export default function SignUpModal({
               }}
               style={{
                 marginTop: height * 0.015,
-                backgroundColor: "#EFE7FF",
+                backgroundColor: "#1F1F1F",
               }}
+              textStyle={{ color: "#FFFEF9" }}
             />
           </View>
         )}

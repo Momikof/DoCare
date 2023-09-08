@@ -2,7 +2,6 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Button } from "../../design-system";
 import { RootStackParamList } from "../../types/RootStackParamList ";
 import { useScreenSize } from "../../hooks/useScreenSize";
-import { useCallback } from "react";
 import { Image, View } from "react-native";
 import { SmallLogo } from "../../components/SmallLogo";
 import SignUpModal from "../../components/SignUpModal";
@@ -18,7 +17,7 @@ export const RolePage = ({
   };
   return (
     <View>
-      <SmallLogo align={"right"} />
+      <SmallLogo align={"left"} />
       <View style={{ alignItems: "center" }}>
         <Image
           style={{ marginTop: height * 0.23 }}
