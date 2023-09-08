@@ -8,6 +8,10 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 
 const reviewSchema = Yup.object().shape({
+  fullName: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
   email: Yup.string().email().required("Required"),
   password: Yup.string()
     .required("Required")
@@ -17,9 +21,9 @@ const reviewSchema = Yup.object().shape({
     ),
 });
 
-export const SignInPage = ({
+export const EmailSignUpPage = ({
   navigation,
-}: NativeStackScreenProps<RootStackParamList, "SignIn">) => {
+}: NativeStackScreenProps<RootStackParamList, "EmailSignUp">) => {
   const { height, width } = useScreenSize();
 
   return (
@@ -42,7 +46,7 @@ export const SignInPage = ({
         <WhiteCircle size={width * 0.625} style={{ marginTop: height * 0.085 }}>
           <Image source={require("../../../assets/images/garden.png")} />
         </WhiteCircle>
-        <Text style={{ marginTop: height * 0.02 }}>התחברות </Text>
+        <Text style={{ marginTop: height * 0.02 }}>צרו חשבון</Text>
 
         <Formik
           initialValues={{ fullName: "", email: "", password: "" }}
@@ -60,6 +64,14 @@ export const SignInPage = ({
               }}
             >
               <TextInput
+                placeholder="שם מלא"
+                onChangeText={props.handleChange("fullName")}
+                value={props.values.fullName}
+                style={{ marginTop: height * 0.04 }}
+              />
+              {/* <Text>{props.touched.fullName && props.errors.fullName}</Text> */}
+
+              <TextInput
                 placeholder="כתובת המייל שלך"
                 onChangeText={props.handleChange("email")}
                 value={props.values.email}
@@ -76,7 +88,7 @@ export const SignInPage = ({
               {/* <Text>{props.touched.password && props.errors.password}</Text> */}
 
               <Button
-                text="הקליקו להתחברות (:"
+                text="הירשמ/י עכשיו (:"
                 onPress={() => {
                   props.submitForm();
                 }}

@@ -17,6 +17,16 @@ export const SignUpPage = ({
     [navigation]
   );
 
+  const onPhoneSignUpClick = useCallback(
+    () => navigation.navigate("PhoneSignUp"),
+    [navigation]
+  );
+
+  const onEmailSignUpClick = useCallback(
+    () => navigation.navigate("EmailSignUp"),
+    [navigation]
+  );
+
   return (
     <View style={{ alignItems: "center" }}>
       <View
@@ -48,11 +58,13 @@ export const SignUpPage = ({
           text={"כניסה באמצעות קוד לנייד"}
           icon={require("../../../assets/images/phone.png")}
           style={{ marginTop: height * 0.01 }}
+          onPress={onPhoneSignUpClick}
         />
         <IconButton
           text={"הרשמה דרך מייל"}
           icon={require("../../../assets/images/mail.png")}
           style={{ marginTop: height * 0.01 }}
+          onPress={onEmailSignUpClick}
         />
       </View>
 

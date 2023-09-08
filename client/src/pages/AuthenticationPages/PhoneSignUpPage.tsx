@@ -3,23 +3,24 @@ import { RootStackParamList } from "../../types/RootStackParamList ";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { WhiteCircle } from "../../components/WhiteCircle";
 import { useScreenSize } from "../../hooks/useScreenSize";
-import { Button, HiddenTextInput, Text, TextInput } from "../../design-system";
+import { Button, Text, TextInput } from "../../design-system";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
 const reviewSchema = Yup.object().shape({
-  email: Yup.string().email().required("Required"),
-  password: Yup.string()
-    .required("Required")
-    .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=^.{8,})/,
-      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number"
-    ),
+  lastName: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  firstName: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
 });
 
-export const SignInPage = ({
+export const PhoneSignUpPage = ({
   navigation,
-}: NativeStackScreenProps<RootStackParamList, "SignIn">) => {
+}: NativeStackScreenProps<RootStackParamList, "PhoneSignUp">) => {
   const { height, width } = useScreenSize();
 
   return (
@@ -42,10 +43,10 @@ export const SignInPage = ({
         <WhiteCircle size={width * 0.625} style={{ marginTop: height * 0.085 }}>
           <Image source={require("../../../assets/images/garden.png")} />
         </WhiteCircle>
-        <Text style={{ marginTop: height * 0.02 }}>התחברות </Text>
+        <Text style={{ marginTop: height * 0.02 }}>הרשמה בסמס</Text>
 
         <Formik
-          initialValues={{ fullName: "", email: "", password: "" }}
+          initialValues={{ firstName: "", lastName: "" }}
           validationSchema={reviewSchema}
           onSubmit={(values, actions) => {
             console.log(values);
@@ -60,20 +61,20 @@ export const SignInPage = ({
               }}
             >
               <TextInput
-                placeholder="כתובת המייל שלך"
-                onChangeText={props.handleChange("email")}
-                value={props.values.email}
+                placeholder="שם פרטי"
+                onChangeText={props.handleChange("firstName")}
+                value={props.values.firstName}
+                style={{ marginTop: height * 0.04 }}
+              />
+              {/* <Text>{props.touched.fullName && props.errors.fullName}</Text> */}
+
+              <TextInput
+                placeholder="שם משפחה"
+                onChangeText={props.handleChange("lastName")}
+                value={props.values.lastName}
                 style={{ marginTop: height * 0.02 }}
               />
               {/* <Text>{props.touched.email && props.errors.email}</Text> */}
-
-              <HiddenTextInput
-                placeholder="סיסמה"
-                onChangeText={props.handleChange("password")}
-                value={props.values.password}
-                style={{ marginTop: height * 0.02 }}
-              />
-              {/* <Text>{props.touched.password && props.errors.password}</Text> */}
 
               <Button
                 text="הקליקו להתחברות (:"
