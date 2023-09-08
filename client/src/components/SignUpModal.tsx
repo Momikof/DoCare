@@ -27,7 +27,7 @@ export default function SignUpModal() {
             initialValues={{ name: "", number: "" }}
             validationSchema={reviewSchema}
             onSubmit={(values, actions) => {
-              actions.resetForm();
+              // actions.resetForm();
               console.log(values);
             }}
           >
@@ -51,7 +51,7 @@ export default function SignUpModal() {
                 <Button
                   text="המשך :)"
                   onPress={() => {
-                    setModalVisible(false);
+                    props.submitForm();
                   }}
                   style={{
                     marginTop: height * 0.015,
