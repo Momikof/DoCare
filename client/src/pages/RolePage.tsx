@@ -3,21 +3,15 @@ import { Button } from "../design-system";
 import { RootStackParamList } from "../types/RootStackParamList ";
 import { useScreenSize } from "../hooks/useScreenSize";
 import { Image, View } from "react-native";
+import { SmallLogo } from "../components/SmallLogo";
 
 export const RolePage = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList, "Roles">) => {
-  const { height, width } = useScreenSize();
+  const { height } = useScreenSize();
   return (
     <View>
-      <Image
-        style={{
-          position: "absolute",
-          marginTop: height * 0.06,
-          marginLeft: width * 0.8,
-        }}
-        source={require("../../assets/images/do.png")}
-      />
+      <SmallLogo align={"right"} />
       <View style={{ alignItems: "center" }}>
         <Image
           style={{ marginTop: height * 0.23 }}

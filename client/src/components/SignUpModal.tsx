@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { Button, TextInput } from "../design-system";
-import { Formik } from "for mik";
+import { Formik } from "formik";
 import { useScreenSize } from "../hooks/useScreenSize";
 
 import * as Yup from "yup";
