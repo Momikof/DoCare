@@ -7,8 +7,6 @@ import { RootStackParamList } from "./src/types/RootStackParamList ";
 import { customFonts } from "./src/utils/customFonts";
 import { StatusBar } from "react-native";
 import { RolePage } from "./src/pages/RolePage";
-import { SignUpCaregiver } from "./src/pages/SignUpCaregiver";
-
 export default function App() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -30,7 +28,6 @@ export default function App() {
         >
           <Stack.Screen name="Home" component={HomePage} />
           <Stack.Screen name="Roles" component={RolePage} />
-          <Stack.Screen name="SignCaregiver" component={SignUpCaregiver} />
           <Stack.Screen
             name="SignUp"
             component={SignUpPage}

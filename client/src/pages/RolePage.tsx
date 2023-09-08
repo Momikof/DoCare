@@ -5,16 +5,17 @@ import { useScreenSize } from "../hooks/useScreenSize";
 import { useCallback } from "react";
 import { Image, View } from "react-native";
 import { SmallLogo } from "../components/SmallLogo";
+import SignUpModal from "../components/SignUpModal";
+import React, { useState } from "react";
 
 export const RolePage = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList, "Roles">) => {
   const { height, width } = useScreenSize();
-
-  const onSignUpClick = useCallback(
-    () => navigation.navigate("SignCaregiver"),
-    [navigation]
-  );
+  const [isVisible, setIsVisible] = useState(false);
+  const onSignSupporter = () => {
+    setIsVisible(true);
+  };
   return (
     <View>
       <SmallLogo align={"right"} />
@@ -30,9 +31,10 @@ export const RolePage = ({
         />
         <Button
           text="הרשמה כתומך"
-          onPress={onSignUpClick}
+          onPress={onSignSupporter}
           style={{ marginTop: height * 0.015, backgroundColor: "#EFE7FF" }}
         />
+        <SignUpModal isVisible={isVisible} setIsVisible={setIsVisible} />
       </View>
     </View>
   );
