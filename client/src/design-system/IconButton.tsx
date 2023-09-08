@@ -7,7 +7,7 @@ import {
   ImageSourcePropType,
   View,
 } from "react-native";
-import { Text } from ".";
+import { Text } from "./Text";
 
 type IconButtonProps = {
   text: string;
