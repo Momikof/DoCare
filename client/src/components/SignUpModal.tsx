@@ -16,12 +16,25 @@ const reviewSchema = Yup.object().shape({
   number: Yup.string().matches(new RegExp("[0-9]{7}")).required("Required"),
 });
 
-export default function SignUpModal() {
+type SignUpModalProps = {
+  isVisible: boolean;
+  setIsVisible: (isVisible: boolean) => void;
+};
+
+export default function SignUpModal({
+  isVisible,
+  setIsVisible,
+}: SignUpModalProps) {
   const { height, width } = useScreenSize();
-  const [modalVisible, setModalVisible] = useState(false);
+
   return (
     <View style={{ alignItems: "center" }}>
-      <ReactNativeModal isVisible={modalVisible}>
+      <ReactNativeModal
+        isVisible={isVisible}
+        onBackdropPress={() => {
+          setIsVisible(false);
+        }}
+      >
         <View style={{ backgroundColor: "#EFE7FF" }}>
           <Formik
             initialValues={{ name: "", number: "" }}
@@ -63,17 +76,6 @@ export default function SignUpModal() {
           </Formik>
         </View>
       </ReactNativeModal>
-      <Button
-        text="הצתרף לקבוצת טיפול קיימת"
-        onPress={() => {
-          setModalVisible(true);
-        }}
-        style={{
-          width: width * 0.4,
-          height: height * 0.14,
-          backgroundColor: "#FFFEF9",
-        }}
-      />
     </View>
   );
 }

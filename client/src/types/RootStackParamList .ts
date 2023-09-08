@@ -5,5 +5,4 @@ export type RootStackParamList = {
   Home: undefined;
   SignUp: SignUpPageProps;
   Roles: undefined;
-  SignCaregiver: undefined;
 };

@@ -30,7 +30,6 @@ export default function App() {
         >
           <Stack.Screen name="Home" component={HomePage} />
           <Stack.Screen name="Roles" component={RolePage} />
-          <Stack.Screen name="SignCaregiver" component={SignUpCaregiver} />
           <Stack.Screen
             name="SignUp"
             component={SignUpPage}
