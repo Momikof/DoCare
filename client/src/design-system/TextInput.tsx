@@ -4,41 +4,22 @@ import {
   StyleSheet,
 } from "react-native";
 
-type TextProps = {
-  varinat?: "title" | "secondary" | "button";
-} & NativeTextInputProps;
+type TextProps = NativeTextInputProps;
 
-export const TextInput = ({
-  children,
-  style,
-  varinat = "title",
-  ...props
-}: TextProps) => {
+export const TextInput = ({ children, style, ...props }: TextProps) => {
   return (
-    <NativeTextInput style={[style]} {...props}>
+    <NativeTextInput style={[styles.default, style]} {...props}>
       {children}
     </NativeTextInput>
   );
 };
 
 const styles = StyleSheet.create({
-  title: {
-    fontFamily: "AnomaliaBold",
+  default: {
+    fontFamily: "Anomalia",
     color: "#1F1F1F",
-    fontSize: 30,
+    fontSize: 16,
     lineHeight: 40,
     letterSpacing: -0.3,
-  },
-  button: {
-    fontFamily: "AnomaliaBold",
-    color: "#1F1F1F",
-    fontSize: 16,
-    lineHeight: 20,
-  },
-  secondary: {
-    fontFamily: "Anomalia",
-    color: "rgba(0, 0, 0, 0.70)",
-    fontSize: 16,
-    lineHeight: 20,
   },
 });
