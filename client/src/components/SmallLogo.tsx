@@ -1,5 +1,5 @@
-import { Image } from "react-native";
 import { useScreenSize } from "../hooks/useScreenSize";
+import DoSmallSVG from "../../assets/images/do-small.svg";
 
 type SmallLogoProps = {
   align: keyof typeof logoAlignment;
@@ -14,13 +14,12 @@ export const SmallLogo = ({ align }: SmallLogoProps) => {
   const { height, width } = useScreenSize();
 
   return (
-    <Image
+    <DoSmallSVG
       style={{
         position: "absolute",
         marginTop: height * 0.06,
         marginLeft: width * logoAlignment[align],
       }}
-      source={require("../../assets/images/do.png")}
     />
   );
 };

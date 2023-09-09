@@ -1,12 +1,12 @@
 import { useCallback, useState } from "react";
 import {
-  Image,
   TextInput as NativeTextInput,
   TextInputProps as NativeTextInputProps,
   Pressable,
   StyleSheet,
   View,
 } from "react-native";
+import CrossedEyeSVG from "../../../assets/images/crossed-eye.svg";
 
 type HiddenTextProps = NativeTextInputProps;
 
@@ -33,7 +33,7 @@ export const HiddenTextInput = ({
         }}
         onPress={onEyePress}
       >
-        <Image source={require("../../../assets/images/crossed-eye.png")} />
+        <CrossedEyeSVG />
       </Pressable>
       <NativeTextInput
         secureTextEntry={isHidden}

@@ -6,6 +6,7 @@ import { useScreenSize } from "../../hooks/useScreenSize";
 import { Button, HiddenTextInput, Text, TextInput } from "../../design-system";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import GardenSVG from "../../../assets/images/garden.svg";
 
 const reviewSchema = Yup.object().shape({
   fullName: Yup.string()
@@ -44,7 +45,7 @@ export const EmailSignUpPage = ({
         }}
       >
         <WhiteCircle size={width * 0.625} style={{ marginTop: height * 0.085 }}>
-          <Image source={require("../../../assets/images/garden.png")} />
+          <GardenSVG />
         </WhiteCircle>
         <Text style={{ marginTop: height * 0.02 }}>צרו חשבון</Text>
 

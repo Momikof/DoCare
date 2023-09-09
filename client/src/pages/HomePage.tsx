@@ -5,6 +5,7 @@ import { useScreenSize } from "../hooks/useScreenSize";
 import { SignUpButton } from "../components/buttons/SignUpButton";
 import { useCallback } from "react";
 import { Image, View } from "react-native";
+import LogoSVG from "../../assets/images/logo.svg";
 
 export const HomePage = ({
   navigation,
@@ -18,10 +19,7 @@ export const HomePage = ({
 
   return (
     <View style={{ alignItems: "center" }}>
-      <Image
-        style={{ marginTop: height * 0.25 }}
-        source={require("../../assets/images/logo.png")}
-      />
+      <LogoSVG style={{ marginTop: height * 0.25 }} />
       <Text style={{ marginTop: height * 0.075 }}>היי, ברוכים הבאים (:</Text>
       <View style={{ marginTop: height * 0.015, alignItems: "center" }}>
         <Text variant="secondary">הגעתם לDOCARE</Text>

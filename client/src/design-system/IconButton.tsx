@@ -3,15 +3,14 @@ import {
   PressableProps,
   Pressable,
   StyleSheet,
-  Image,
-  ImageSourcePropType,
   View,
 } from "react-native";
+import { SvgProps, SvgUri } from "react-native-svg";
 import { Text } from "./Text";
 
 type IconButtonProps = {
   text: string;
-  icon: ImageSourcePropType;
+  icon: React.ReactNode;
   textStyle?: TextStyle;
 } & PressableProps;
 
@@ -24,9 +23,7 @@ export const IconButton = ({
 }: IconButtonProps) => {
   return (
     <Pressable style={[styles.default, style as any]} {...props}>
-      <View style={{ width: 20 }}>
-        <Image source={icon} />
-      </View>
+      <View style={{ width: 20 }}>{icon}</View>
       <Text variant="button" style={textStyle}>
         {text}
       </Text>

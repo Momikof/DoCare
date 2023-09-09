@@ -6,6 +6,7 @@ import { Image, View } from "react-native";
 import { SmallLogo } from "../../components/SmallLogo";
 import SignUpModal from "../../components/SignUpModal";
 import React, { useState } from "react";
+import CoupleSVG from "../../../assets/images/couple.svg";
 
 export const RolePage = ({
   navigation,
@@ -19,10 +20,7 @@ export const RolePage = ({
     <View>
       <SmallLogo align={"left"} />
       <View style={{ alignItems: "center" }}>
-        <Image
-          style={{ marginTop: height * 0.23 }}
-          source={require("../../../assets/images/Group.png")}
-        />
+        <CoupleSVG style={{ marginTop: height * 0.23 }} />
         <Button
           text="כניסה כ- CAREGIVER"
           onPress={() => {}}

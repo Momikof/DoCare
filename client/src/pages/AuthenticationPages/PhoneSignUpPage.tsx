@@ -1,4 +1,4 @@
-import { Image, View } from "react-native";
+import { View } from "react-native";
 import { RootStackParamList } from "../../types/RootStackParamList ";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { WhiteCircle } from "../../components/WhiteCircle";
@@ -6,6 +6,7 @@ import { useScreenSize } from "../../hooks/useScreenSize";
 import { Button, Text, TextInput } from "../../design-system";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import GardenSVG from "../../../assets/images/garden.svg";
 
 const reviewSchema = Yup.object().shape({
   lastName: Yup.string()
@@ -41,7 +42,7 @@ export const PhoneSignUpPage = ({
         }}
       >
         <WhiteCircle size={width * 0.625} style={{ marginTop: height * 0.085 }}>
-          <Image source={require("../../../assets/images/garden.png")} />
+          <GardenSVG />
         </WhiteCircle>
         <Text style={{ marginTop: height * 0.02 }}>הרשמה בסמס</Text>
 
