@@ -15,12 +15,15 @@ const reviewSchema = Yup.object().shape({
   number: Yup.string().matches(new RegExp("[0-9]{7}")).required("Required"),
 });
 
-type SignUpModalProps = {
+type SupporterModalProps = {
   isVisible: boolean;
   setIsVisible: (isVisible: boolean) => void;
 };
 
-export function SignUpModal({ isVisible, setIsVisible }: SignUpModalProps) {
+export function SupporterModal({
+  isVisible,
+  setIsVisible,
+}: SupporterModalProps) {
   const { height, width } = useScreenSize();
 
   return (
@@ -46,7 +49,7 @@ export function SignUpModal({ isVisible, setIsVisible }: SignUpModalProps) {
               alignItems: "center",
               width: width * 0.95,
               height: height * 0.35,
-              borderRadius: 10,
+              borderRadius: 32,
               borderWidth: 1,
               borderColor: "#1F1F1F",
             }}
