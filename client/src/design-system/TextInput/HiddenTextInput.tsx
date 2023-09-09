@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { forwardRef, useCallback, useState } from "react";
 import {
   TextInput as NativeTextInput,
   TextInputProps as NativeTextInputProps,
@@ -8,13 +8,14 @@ import {
 } from "react-native";
 import CrossedEyeSVG from "@images/crossed-eye.svg";
 
-type HiddenTextProps = NativeTextInputProps;
+type HiddenTextInputProps = {
+  nextInput?: React.MutableRefObject<NativeTextInput>;
+} & NativeTextInputProps;
 
-export const HiddenTextInput = ({
-  children,
-  style,
-  ...props
-}: HiddenTextProps) => {
+export const HiddenTextInput = forwardRef<
+  NativeTextInput,
+  HiddenTextInputProps
+>(({ children, style, nextInput, ...props }, ref) => {
   const [isHidden, setIsHidden] = useState(true);
 
   const onEyePress = useCallback(() => {
@@ -36,6 +37,12 @@ export const HiddenTextInput = ({
         <CrossedEyeSVG />
       </Pressable>
       <NativeTextInput
+        ref={ref}
+        blurOnSubmit={false}
+        onSubmitEditing={() => {
+          nextInput?.current?.focus();
+        }}
+        returnKeyType="next"
         secureTextEntry={isHidden}
         style={[styles.default, style]}
         {...props}
@@ -44,7 +51,7 @@ export const HiddenTextInput = ({
       </NativeTextInput>
     </View>
   );
-};
+});
 
 const styles = StyleSheet.create({
   default: {

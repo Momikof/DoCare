@@ -1,4 +1,4 @@
-import { Image, View } from "react-native";
+import { View } from "react-native";
 import { RootStackParamList } from "@types";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { WhiteCircle } from "@components";
@@ -7,6 +7,8 @@ import { Button, HiddenTextInput, Text, TextInput } from "@design-system";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import GardenSVG from "@images/garden.svg";
+import { useRef } from "react";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 const reviewSchema = Yup.object().shape({
   fullName: Yup.string()
@@ -26,93 +28,92 @@ export const EmailSignUpPage = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList, "EmailSignUp">) => {
   const { height, width } = useScreenSize();
+  const emailInputRef = useRef<any>();
+  const passwordInputRef = useRef<any>();
 
   return (
-    <View
-      style={{
+    <KeyboardAwareScrollView
+      contentContainerStyle={{
+        marginVertical: 10,
+        marginHorizontal: 18,
+        backgroundColor: "#EFE7FF",
+        borderRadius: 32,
         alignItems: "center",
-        paddingVertical: 10,
-        paddingHorizontal: 18,
       }}
     >
-      <View
-        style={{
-          backgroundColor: "#EFE7FF",
-          borderRadius: 32,
-          alignItems: "center",
-          width: "100%",
-          height: "100%",
+      <WhiteCircle size={width * 0.625} style={{ marginTop: height * 0.085 }}>
+        <GardenSVG />
+      </WhiteCircle>
+      <Text style={{ marginTop: height * 0.02 }}>צרו חשבון</Text>
+
+      <Formik
+        initialValues={{ fullName: "", email: "", password: "" }}
+        validationSchema={reviewSchema}
+        onSubmit={(values, actions) => {
+          console.log(values);
         }}
       >
-        <WhiteCircle size={width * 0.625} style={{ marginTop: height * 0.085 }}>
-          <GardenSVG />
-        </WhiteCircle>
-        <Text style={{ marginTop: height * 0.02 }}>צרו חשבון</Text>
+        {(props) => (
+          <View
+            style={{
+              width: "100%",
+              alignItems: "center",
+            }}
+          >
+            <TextInput
+              placeholder="שם מלא"
+              onChangeText={props.handleChange("fullName")}
+              value={props.values.fullName}
+              style={{ marginTop: height * 0.04 }}
+              nextInput={emailInputRef}
+            />
+            {/* <Text>{props.touched.fullName && props.errors.fullName}</Text> */}
 
-        <Formik
-          initialValues={{ fullName: "", email: "", password: "" }}
-          validationSchema={reviewSchema}
-          onSubmit={(values, actions) => {
-            console.log(values);
-          }}
-        >
-          {(props) => (
-            <View
-              style={{
-                width: "100%",
-                height: "100%",
-                alignItems: "center",
+            <TextInput
+              ref={emailInputRef}
+              placeholder="כתובת המייל שלך"
+              onChangeText={props.handleChange("email")}
+              value={props.values.email}
+              style={{ marginTop: height * 0.02 }}
+              nextInput={passwordInputRef}
+            />
+            {/* <Text>{props.touched.email && props.errors.email}</Text> */}
+
+            <HiddenTextInput
+              ref={passwordInputRef}
+              placeholder="סיסמה"
+              onChangeText={props.handleChange("password")}
+              value={props.values.password}
+              blurOnSubmit={true}
+              style={{ marginTop: height * 0.02 }}
+            />
+            {/* <Text>{props.touched.password && props.errors.password}</Text> */}
+
+            <Button
+              text="הירשמ/י עכשיו (:"
+              onPress={() => {
+                props.submitForm();
               }}
-            >
-              <TextInput
-                placeholder="שם מלא"
-                onChangeText={props.handleChange("fullName")}
-                value={props.values.fullName}
-                style={{ marginTop: height * 0.04 }}
-              />
-              {/* <Text>{props.touched.fullName && props.errors.fullName}</Text> */}
-
-              <TextInput
-                placeholder="כתובת המייל שלך"
-                onChangeText={props.handleChange("email")}
-                value={props.values.email}
-                style={{ marginTop: height * 0.02 }}
-              />
-              {/* <Text>{props.touched.email && props.errors.email}</Text> */}
-
-              <HiddenTextInput
-                placeholder="סיסמה"
-                onChangeText={props.handleChange("password")}
-                value={props.values.password}
-                style={{ marginTop: height * 0.02 }}
-              />
-              {/* <Text>{props.touched.password && props.errors.password}</Text> */}
-
-              <Button
-                text="הירשמ/י עכשיו (:"
-                onPress={() => {
-                  props.submitForm();
-                }}
-                style={{
-                  marginTop: height * 0.04,
-                }}
-                textStyle={{ color: "#FFFEF9" }}
-              />
-
-              <View
-                style={{ justifyContent: "center", marginTop: height * 0.05 }}
-              >
-                <Text variant="secondary">
-                  ביצירת/כניסה לחשבון הינך מסכימ/ה
-                </Text>
-                <Text variant="link" style={{ textAlign: "center" }}>
-                  לתקנון השימוש שלנו
-                </Text>
-              </View>
-            </View>
-          )}
-        </Formik>
+              style={{
+                marginTop: height * 0.04,
+              }}
+              textStyle={{ color: "#FFFEF9" }}
+            />
+          </View>
+        )}
+      </Formik>
+      <View
+        style={{
+          justifyContent: "center",
+          marginTop: height * 0.05,
+          paddingBottom: 24,
+        }}
+      >
+        <Text variant="secondary">ביצירת/כניסה לחשבון הינך מסכימ/ה</Text>
+        <Text variant="link" style={{ textAlign: "center" }}>
+          לתקנון השימוש שלנו
+        </Text>
       </View>
-    </View>
+    </KeyboardAwareScrollView>
   );
 };

@@ -32,7 +32,7 @@ export const IconButton = ({
 
 const styles = StyleSheet.create({
   default: {
-    width: "90%",
+    width: "95%",
     flexDirection: "row",
     alignContent: "flex-start",
     flexWrap: "wrap",

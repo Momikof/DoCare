@@ -1,18 +1,32 @@
+import { forwardRef } from "react";
 import {
   TextInput as NativeTextInput,
   TextInputProps as NativeTextInputProps,
   StyleSheet,
 } from "react-native";
 
-type TextProps = NativeTextInputProps;
+type TextInputProps = {
+  nextInput?: React.MutableRefObject<NativeTextInput>;
+} & NativeTextInputProps;
 
-export const TextInput = ({ children, style, ...props }: TextProps) => {
-  return (
-    <NativeTextInput style={[styles.default, style]} {...props}>
-      {children}
-    </NativeTextInput>
-  );
-};
+export const TextInput = forwardRef<NativeTextInput, TextInputProps>(
+  ({ children, style, nextInput, ...props }, ref) => {
+    return (
+      <NativeTextInput
+        ref={ref}
+        blurOnSubmit={false}
+        onSubmitEditing={() => {
+          nextInput?.current?.focus();
+        }}
+        returnKeyType="next"
+        style={[styles.default, style]}
+        {...props}
+      >
+        {children}
+      </NativeTextInput>
+    );
+  }
+);
 
 const styles = StyleSheet.create({
   default: {

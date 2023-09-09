@@ -18,7 +18,7 @@ export const Button = ({ text, textStyle, style, ...props }: ButtonProps) => {
 
 export const buttonStyles = StyleSheet.create({
   default: {
-    width: "90%",
+    width: "95%",
     flexDirection: "row",
     justifyContent: "center",
     padding: 16,

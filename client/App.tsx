@@ -12,6 +12,7 @@ import {
   SignInPage,
   SignUpPage,
 } from "@pages";
+import { useScreenSize } from "@hooks";
 
 export default function App() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
