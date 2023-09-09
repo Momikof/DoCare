@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import { Button, TextInput, Text } from "../design-system";
+import { Button, TextInput } from "../design-system";
 import { Formik } from "formik";
 import { useScreenSize } from "../hooks/useScreenSize";
 
@@ -15,15 +15,15 @@ const reviewSchema = Yup.object().shape({
   number: Yup.string().matches(new RegExp("[0-9]{7}")).required("Required"),
 });
 
-type SignUpModalProps = {
+type SupporterModalProps = {
   isVisible: boolean;
   setIsVisible: (isVisible: boolean) => void;
 };
 
-export default function SignUpModal({
+export default function SupporterModal({
   isVisible,
   setIsVisible,
-}: SignUpModalProps) {
+}: SupporterModalProps) {
   const { height, width } = useScreenSize();
 
   return (
@@ -49,7 +49,7 @@ export default function SignUpModal({
               alignItems: "center",
               width: width * 0.95,
               height: height * 0.35,
-              borderRadius: 10,
+              borderRadius: 32,
               borderWidth: 1,
               borderColor: "#1F1F1F",
             }}
@@ -60,15 +60,14 @@ export default function SignUpModal({
               onChangeText={props.handleChange("name")}
               value={props.values.name}
             />
-            <View style={{ flexDirection: "row" }}>
-              <TextInput
-                keyboardType="numeric"
-                style={{ marginTop: height * 0.015, flex: 1 }}
-                placeholder="מס' הטלפון של הCAREGIVER"
-                onChangeText={props.handleChange("number")}
-                value={props.values.number}
-              />
-            </View>
+
+            <TextInput
+              keyboardType="numeric"
+              style={{ marginTop: height * 0.015 }}
+              placeholder="מס' הטלפון של הCAREGIVER"
+              onChangeText={props.handleChange("number")}
+              value={props.values.number}
+            />
 
             <Button
               text="המשך :)"
