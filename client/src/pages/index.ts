@@ -1,0 +1,6 @@
+export * from './HomePage'
+export * from './AuthenticationPages/EmailSignUpPage'
+export * from './AuthenticationPages/PhoneSignUpPage'
+export * from './AuthenticationPages/RolePage'
+export * from './AuthenticationPages/SignInPage'
+export * from './AuthenticationPages/SignUpPage'

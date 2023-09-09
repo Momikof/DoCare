@@ -1,12 +1,11 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Button } from "../../design-system";
-import { RootStackParamList } from "../../types/RootStackParamList ";
-import { useScreenSize } from "../../hooks/useScreenSize";
-import { Image, View } from "react-native";
-import { SmallLogo } from "../../components/SmallLogo";
-import SignUpModal from "../../components/SignUpModal";
-import React, { useState } from "react";
-import CoupleSVG from "../../../assets/images/couple.svg";
+import { Button } from "@design-system";
+import { RootStackParamList } from "@types";
+import { useScreenSize } from "@hooks";
+import { View } from "react-native";
+import { SmallLogo, SignUpModal } from "@components";
+import { useState } from "react";
+import CoupleSVG from "@images/couple.svg";
 
 export const RolePage = ({
   navigation,

@@ -6,7 +6,7 @@ import {
   StyleSheet,
   View,
 } from "react-native";
-import CrossedEyeSVG from "../../../assets/images/crossed-eye.svg";
+import CrossedEyeSVG from "@images/crossed-eye.svg";
 
 type HiddenTextProps = NativeTextInputProps;
 

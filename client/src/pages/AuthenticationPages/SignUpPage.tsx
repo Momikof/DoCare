@@ -1,15 +1,14 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Text } from "../../design-system";
-import { RootStackParamList } from "../../types/RootStackParamList ";
-import { useScreenSize } from "../../hooks/useScreenSize";
 import { View } from "react-native";
-import { WhiteCircle } from "../../components/WhiteCircle";
-import { IconButton } from "../../design-system";
 import { useCallback } from "react";
-import GoogleSVG from "../../../assets/images/google.svg";
-import MailSVG from "../../../assets/images/mail.svg";
-import PhoneSVG from "../../../assets/images/phone.svg";
-import DoBlackSVG from "../../../assets/images/do-black.svg";
+import GoogleSVG from "@images/google.svg";
+import MailSVG from "@images/mail.svg";
+import PhoneSVG from "@images/phone.svg";
+import DoBlackSVG from "@images/do-black.svg";
+import { RootStackParamList } from "@types";
+import { useScreenSize } from "@hooks";
+import { WhiteCircle } from "@components";
+import { IconButton, Text } from "@design-system";
 
 export const SignUpPage = ({
   navigation,

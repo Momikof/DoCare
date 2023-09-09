@@ -1,11 +1,11 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Button, Text } from "../design-system";
-import { RootStackParamList } from "../types/RootStackParamList ";
-import { useScreenSize } from "../hooks/useScreenSize";
-import { SignUpButton } from "../components/buttons/SignUpButton";
+import { Button, Text } from "@design-system";
+import { RootStackParamList } from "@types";
+import { useScreenSize } from "@hooks";
+import { SignUpButton } from "@components";
 import { useCallback } from "react";
-import { Image, View } from "react-native";
-import LogoSVG from "../../assets/images/logo.svg";
+import { View } from "react-native";
+import LogoSVG from "@images/logo.svg";
 
 export const HomePage = ({
   navigation,

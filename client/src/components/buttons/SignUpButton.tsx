@@ -1,6 +1,6 @@
 import { Pressable } from "react-native";
-import { buttonStyles, Text } from "../../design-system";
-import { useScreenSize } from "../../hooks/useScreenSize";
+import { buttonStyles, Text } from "@design-system";
+import { useScreenSize } from "@hooks";
 
 type SignUpButtonProps = {
   onClick: VoidFunction;

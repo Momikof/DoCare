@@ -1,7 +1,7 @@
 import { View } from "react-native";
-import { Button, TextInput, Text } from "../design-system";
+import { Button, TextInput } from "@design-system";
 import { Formik } from "formik";
-import { useScreenSize } from "../hooks/useScreenSize";
+import { useScreenSize } from "@hooks";
 
 import * as Yup from "yup";
 import "yup-phone";
@@ -20,10 +20,7 @@ type SignUpModalProps = {
   setIsVisible: (isVisible: boolean) => void;
 };
 
-export default function SignUpModal({
-  isVisible,
-  setIsVisible,
-}: SignUpModalProps) {
+export function SignUpModal({ isVisible, setIsVisible }: SignUpModalProps) {
   const { height, width } = useScreenSize();
 
   return (
@@ -60,15 +57,13 @@ export default function SignUpModal({
               onChangeText={props.handleChange("name")}
               value={props.values.name}
             />
-            <View style={{ flexDirection: "row" }}>
-              <TextInput
-                keyboardType="numeric"
-                style={{ marginTop: height * 0.015, flex: 1 }}
-                placeholder="מס' הטלפון של הCAREGIVER"
-                onChangeText={props.handleChange("number")}
-                value={props.values.number}
-              />
-            </View>
+            <TextInput
+              keyboardType="numeric"
+              style={{ marginTop: height * 0.015 }}
+              placeholder="מס' הטלפון של הCAREGIVER"
+              onChangeText={props.handleChange("number")}
+              value={props.values.number}
+            />
 
             <Button
               text="המשך :)"

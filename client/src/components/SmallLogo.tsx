@@ -1,5 +1,5 @@
-import { useScreenSize } from "../hooks/useScreenSize";
-import DoSmallSVG from "../../assets/images/do-small.svg";
+import { useScreenSize } from "@hooks";
+import DoSmallSVG from "@images/do-small.svg";
 
 type SmallLogoProps = {
   align: keyof typeof logoAlignment;

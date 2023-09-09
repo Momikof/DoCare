@@ -1,12 +1,12 @@
 import { Image, View } from "react-native";
-import { RootStackParamList } from "../../types/RootStackParamList ";
+import { RootStackParamList } from "@types";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { WhiteCircle } from "../../components/WhiteCircle";
-import { useScreenSize } from "../../hooks/useScreenSize";
-import { Button, HiddenTextInput, Text, TextInput } from "../../design-system";
+import { WhiteCircle } from "@components";
+import { useScreenSize } from "@hooks";
+import { Button, HiddenTextInput, Text, TextInput } from "@design-system";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import GardenSVG from "../../../assets/images/garden.svg";
+import GardenSVG from "@images/garden.svg";
 
 const reviewSchema = Yup.object().shape({
   fullName: Yup.string()

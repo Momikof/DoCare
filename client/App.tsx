@@ -1,15 +1,17 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { HomePage } from "./src/pages/HomePage";
 import { useFonts } from "expo-font";
-import { SignUpPage } from "./src/pages/AuthenticationPages/SignUpPage";
-import { RootStackParamList } from "./src/types/RootStackParamList ";
-import { customFonts } from "./src/utils/customFonts";
+import { RootStackParamList } from "@types";
+import { customFonts } from "@utils";
 import { StatusBar } from "react-native";
-import { RolePage } from "./src/pages/AuthenticationPages/RolePage";
-import { SignInPage } from "./src/pages/AuthenticationPages/SignInPage";
-import { EmailSignUpPage } from "./src/pages/AuthenticationPages/EmailSignUpPage";
-import { PhoneSignUpPage } from "./src/pages/AuthenticationPages/PhoneSignUpPage";
+import {
+  EmailSignUpPage,
+  HomePage,
+  PhoneSignUpPage,
+  RolePage,
+  SignInPage,
+  SignUpPage,
+} from "@pages";
 
 export default function App() {
   const Stack = createNativeStackNavigator<RootStackParamList>();

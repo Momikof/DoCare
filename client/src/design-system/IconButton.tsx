@@ -5,7 +5,6 @@ import {
   StyleSheet,
   View,
 } from "react-native";
-import { SvgProps, SvgUri } from "react-native-svg";
 import { Text } from "./Text";
 
 type IconButtonProps = {
