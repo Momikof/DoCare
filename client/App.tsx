@@ -7,12 +7,10 @@ import { StatusBar } from "react-native";
 import {
   EmailSignUpPage,
   HomePage,
-  PhoneSignUpPage,
   RolePage,
   SignInPage,
   SignUpPage,
 } from "@pages";
-import { useScreenSize } from "@hooks";
 
 export default function App() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -38,7 +36,6 @@ export default function App() {
           <Stack.Screen name="SignUp" component={SignUpPage} />
           <Stack.Screen name="SignIn" component={SignInPage} />
           <Stack.Screen name="EmailSignUp" component={EmailSignUpPage} />
-          <Stack.Screen name="PhoneSignUp" component={PhoneSignUpPage} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

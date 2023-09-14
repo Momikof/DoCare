@@ -109,7 +109,7 @@ export const EmailSignUpPage = ({
           paddingBottom: 24,
         }}
       >
-        <Text variant="secondary">ביצירת/כניסה לחשבון הינך מסכימ/ה</Text>
+        <Text variant="secondary">ביצירת חשבון הינך מסכימ/ה</Text>
         <Text variant="link" style={{ textAlign: "center" }}>
           לתקנון השימוש שלנו
         </Text>

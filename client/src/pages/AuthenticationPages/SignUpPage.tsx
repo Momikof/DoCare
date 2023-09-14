@@ -3,7 +3,6 @@ import { View } from "react-native";
 import { useCallback } from "react";
 import GoogleSVG from "@images/google.svg";
 import MailSVG from "@images/mail.svg";
-import PhoneSVG from "@images/phone.svg";
 import DoBlackSVG from "@images/do-black.svg";
 import { RootStackParamList } from "@types";
 import { useScreenSize } from "@hooks";
@@ -17,11 +16,6 @@ export const SignUpPage = ({
 
   const onAlreadySignedClick = useCallback(
     () => navigation.navigate("SignIn"),
-    [navigation]
-  );
-
-  const onPhoneSignUpClick = useCallback(
-    () => navigation.navigate("PhoneSignUp"),
     [navigation]
   );
 
@@ -55,12 +49,6 @@ export const SignUpPage = ({
           text={"כניסה דרך google"}
           icon={<GoogleSVG />}
           style={{ marginTop: height * 0.085 }}
-        />
-        <IconButton
-          text={"כניסה באמצעות קוד לנייד"}
-          icon={<PhoneSVG />}
-          style={{ marginTop: height * 0.01 }}
-          onPress={onPhoneSignUpClick}
         />
         <IconButton
           text={"הרשמה דרך מייל"}
