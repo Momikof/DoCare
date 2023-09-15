@@ -1,40 +1,53 @@
-import { StyleSheet, TextStyle, Text as NativeText } from "react-native";
+import {
+  Text as NativeText,
+  TextProps as NativeTextProps,
+  StyleSheet,
+} from "react-native";
 
 type TextProps = {
-  varinat?: "title" | "secondary" | "button";
-} & TextStyle &
-  React.PropsWithChildren;
+  variant?: keyof typeof styles;
+} & NativeTextProps;
 
-export const Text = ({ children, varinat = "title", ...props }: TextProps) => {
+export const Text = ({
+  variant = "title",
+  style,
+  children,
+  ...props
+}: TextProps) => {
   return (
-    <NativeText style={{ ...styles[varinat], ...props }}>{children}</NativeText>
+    <NativeText style={[styles[variant], style]} {...props}>
+      {children}
+    </NativeText>
   );
 };
 
 const styles = StyleSheet.create({
   title: {
-    // fontFamily: "Anomalia",
+    fontFamily: "AnomaliaBold",
     color: "#1F1F1F",
     fontSize: 30,
     lineHeight: 40,
     letterSpacing: -0.3,
-    fontWeight: "500",
-    textAlign: "center",
   },
   button: {
-    // fontFamily: "Anomalia",
+    fontFamily: "AnomaliaBold",
     color: "#1F1F1F",
     fontSize: 16,
     lineHeight: 20,
-    fontWeight: "500",
-    textAlign: "center",
   },
   secondary: {
-    // fontFamily: "Anomalia",
+    fontFamily: "Anomalia",
     color: "rgba(0, 0, 0, 0.70)",
     fontSize: 16,
     lineHeight: 20,
-    fontWeight: "300",
-    textAlign: "center",
+  },
+  link: {
+    fontFamily: "AnomaliaBold",
+    color: "#1F1F1F",
+    lineHeight: 17.5,
+    fontSize: 14,
+    textDecorationStyle: "solid",
+    textDecorationColor: "black",
+    textDecorationLine: "underline",
   },
 });
