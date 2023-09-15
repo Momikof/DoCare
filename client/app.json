@@ -1,10 +1,10 @@
 {
   "expo": {
+    "scheme": "DoCare",
     "name": "DoCare",
     "slug": "DoCare",
     "version": "1.0.0",
     "orientation": "portrait",
-    "scheme": "your-app-scheme",
     "icon": "./assets/images/logo.png",
     "userInterfaceStyle": "light",
     "splash": {
