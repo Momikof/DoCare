@@ -1,6 +1,5 @@
-import { View } from "react-native";
+import { View, useWindowDimensions } from "react-native";
 import { Text } from "@design-system";
-import { useScreenSize } from "../hooks/useScreenSize";
 import { ReactNativeModal } from "react-native-modal";
 import CreateGroupSVG from "@images/create-group.svg";
 import JoinGroupSVG from "@images/join-group.svg";
@@ -15,7 +14,7 @@ export function CaregiverModal({
   isVisible,
   setIsVisible,
 }: CaregiverModalProps) {
-  const { height, width } = useScreenSize();
+  const { height, width } = useWindowDimensions();
 
   return (
     <ReactNativeModal

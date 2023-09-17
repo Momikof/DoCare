@@ -1,18 +1,17 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { View } from "react-native";
+import { View, useWindowDimensions } from "react-native";
 import { useCallback } from "react";
 import GoogleSVG from "@images/google.svg";
 import MailSVG from "@images/mail.svg";
 import DoBlackSVG from "@images/do-black.svg";
 import { RootStackParamList } from "@types";
-import { useScreenSize } from "@hooks";
 import { WhiteCircle } from "@components";
 import { IconButton, Text } from "@design-system";
 
 export const SignUpPage = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList, "SignUp">) => {
-  const { height, width } = useScreenSize();
+  const { height, width } = useWindowDimensions();
 
   const onAlreadySignedClick = useCallback(
     () => navigation.navigate("SignIn"),

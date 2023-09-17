@@ -1,7 +1,6 @@
-import { View } from "react-native";
+import { View, useWindowDimensions } from "react-native";
 import { Button, TextInput } from "@design-system";
 import { Formik } from "formik";
-import { useScreenSize } from "@hooks";
 
 import * as Yup from "yup";
 import "yup-phone";
@@ -24,7 +23,7 @@ export function SupporterModal({
   isVisible,
   setIsVisible,
 }: SupporterModalProps) {
-  const { height, width } = useScreenSize();
+  const { height, width } = useWindowDimensions();
 
   return (
     <ReactNativeModal

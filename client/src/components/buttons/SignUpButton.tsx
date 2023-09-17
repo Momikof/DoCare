@@ -1,13 +1,12 @@
-import { Pressable } from "react-native";
+import { Pressable, useWindowDimensions } from "react-native";
 import { buttonStyles, Text } from "@design-system";
-import { useScreenSize } from "@hooks";
 
 type SignUpButtonProps = {
   onClick: VoidFunction;
 };
 
 export const SignUpButton = ({ onClick }: SignUpButtonProps) => {
-  const { height } = useScreenSize();
+  const { height } = useWindowDimensions();
 
   return (
     <Pressable

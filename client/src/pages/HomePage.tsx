@@ -1,16 +1,15 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Button, Text } from "@design-system";
 import { RootStackParamList } from "@types";
-import { useScreenSize } from "@hooks";
 import { SignUpButton } from "@components";
 import { useCallback } from "react";
-import { View } from "react-native";
+import { View, useWindowDimensions } from "react-native";
 import LogoSVG from "@images/logo.svg";
 
 export const HomePage = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList, "Home">) => {
-  const { height } = useScreenSize();
+  const { height } = useWindowDimensions();
 
   const onSignUpClick = useCallback(
     () => navigation.navigate("Roles"),

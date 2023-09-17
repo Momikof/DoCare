@@ -1,8 +1,7 @@
-import { View } from "react-native";
+import { View, useWindowDimensions } from "react-native";
 import { RootStackParamList } from "@types";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { WhiteCircle } from "@components";
-import { useScreenSize } from "@hooks";
 import { Button, HiddenTextInput, Text, TextInput } from "@design-system";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -23,7 +22,7 @@ const reviewSchema = Yup.object().shape({
 export const SignInPage = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList, "SignIn">) => {
-  const { height, width } = useScreenSize();
+  const { height, width } = useWindowDimensions();
   const passwordInputRef = useRef<any>();
 
   return (

@@ -9,26 +9,6 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
-<<<<<<< HEAD
-      users: {
-        Row: {
-          id: number
-          name: string
-          password: string
-        }
-        Insert: {
-          id?: number
-          name: string
-          password: string
-        }
-        Update: {
-          id?: number
-          name?: string
-          password?: string
-        }
-        Relationships: []
-      }
-=======
       communities: {
         Row: {
           created_at: string
@@ -189,7 +169,6 @@ export interface Database {
           }
         ]
       }
->>>>>>> 0ccec08c3685077188b07f58e5d208a6fafd75eb
     }
     Views: {
       [_ in never]: never
@@ -205,3 +184,4 @@ export interface Database {
     }
   }
 }
+

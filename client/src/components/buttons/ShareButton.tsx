@@ -1,11 +1,10 @@
 import React from "react";
-import { Alert, Share } from "react-native";
+import { Alert, Share, useWindowDimensions } from "react-native";
 import { Button } from "@design-system";
-import { useScreenSize } from "@hooks";
 import { View } from "react-native";
 
 const ShareExample = () => {
-  const { height } = useScreenSize();
+  const { height } = useWindowDimensions();
   const onShare = async () => {
     try {
       const result = await Share.share({

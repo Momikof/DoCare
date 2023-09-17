@@ -1,8 +1,7 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Button } from "@design-system";
 import { RootStackParamList } from "@types";
-import { useScreenSize } from "@hooks";
-import { View } from "react-native";
+import { View, useWindowDimensions } from "react-native";
 import { SmallLogo, SupporterModal, CaregiverModal } from "@components";
 import React, { useState } from "react";
 import CoupleSVG from "@images/couple.svg";
@@ -10,7 +9,7 @@ import CoupleSVG from "@images/couple.svg";
 export const RolePage = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList, "Roles">) => {
-  const { height, width } = useScreenSize();
+  const { height, width } = useWindowDimensions();
 
   const [isSupporterVisible, setSupporterIsVisible] = useState(false);
   const [isCaregiverVisible, setCaregiverIsVisible] = useState(false);
