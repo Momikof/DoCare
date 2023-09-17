@@ -9,6 +9,7 @@ import { AuthService } from "./auth-service.interface";
 import _ from "lodash";
 
 export class SupabaseAuthService extends AuthService {
+  
   constructor() {
     super(
       new SupabaseOAuthProvider("google"),
@@ -22,5 +23,9 @@ export class SupabaseAuthService extends AuthService {
 
   async signOut(): Promise<void> {
     await supabase.auth.signOut();
+  }
+
+  async getUserId(): Promise<string> {
+    return (await supabase.auth.getUser()).data.user.id;
   }
 }

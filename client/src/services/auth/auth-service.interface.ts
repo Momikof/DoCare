@@ -11,4 +11,5 @@ export abstract class AuthService {
 
   abstract isLoggedIn(): Promise<boolean>;
   abstract signOut(): Promise<void>;
+  abstract getUserId(): Promise<string>;
 }
