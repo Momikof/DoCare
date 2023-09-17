@@ -8,6 +8,7 @@ import { RootStackParamList } from "./src/types/RootStackParamList ";
 import { customFonts } from "./src/utils/customFonts";
 import { useEffect } from "react";
 import { coolDownAsync, warmUpAsync } from "expo-web-browser";
+import Home from "./src/components/one-signal-test/one-signal-test";
 
 export default function App() {
   useEffect(() => {
@@ -33,7 +34,7 @@ export default function App() {
           headerShown: false,
         }}
       >
-        <Stack.Screen name="Home" component={HomePage} />
+        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen
           name="SignUp"
           component={SignUpPage}

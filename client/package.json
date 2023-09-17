@@ -13,7 +13,7 @@
     "@expo/webpack-config": "^19.0.0",
     "@react-native-async-storage/async-storage": "^1.19.3",
     "@react-navigation/native-stack": "^6.9.13",
-    "@supabase/supabase-js": "^2.33.1",
+    "@supabase/supabase-js": "^2.33.2",
     "expo": "~49.0.8",
     "expo-font": "^11.4.0",
     "expo-linking": "~5.0.2",
@@ -21,11 +21,13 @@
     "expo-status-bar": "~1.6.0",
     "expo-web-browser": "~12.3.2",
     "lodash": "^4.17.21",
+    "next": "^13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.72.4",
     "react-native-url-polyfill": "^2.0.0",
     "react-native-web": "~0.19.6",
+    "react-onesignal": "^3.0.1",
     "zustand": "^4.4.1"
   },
   "devDependencies": {
