@@ -1,6 +1,4 @@
-
-
-export const Task: React.FC = () => {
+export const SendButton: React.FC = () => {
     
     return (
         <>
