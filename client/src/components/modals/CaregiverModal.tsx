@@ -1,6 +1,6 @@
 import { Pressable, View } from "react-native";
 import { Text } from "@design-system";
-import { useScreenSize } from "../hooks/useScreenSize";
+import { useScreenSize } from "../../hooks/useScreenSize";
 import { ReactNativeModal } from "react-native-modal";
 import CreateGroupSVG from "@images/create-group.svg";
 import JoinGroupSVG from "@images/join-group.svg";

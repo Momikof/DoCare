@@ -1,11 +1,20 @@
+import React from "react";
 import { useScreenSize } from "@hooks";
-import { View } from "react-native";
+import { View, ViewStyle } from "react-native";
 import { WhiteCircle } from "@components";
 import DudeSVG from "@images/do-black.svg";
 import EditSVG from "@images/edit-icon.svg";
 
-const ProfilePicture = () => {
+interface ProfilePictureProps {
+  variant: "dark" | "light"; // Color variant can be either 'dark' or 'light'
+}
+
+const ProfilePicture: React.FC<ProfilePictureProps> = ({ variant }) => {
   const { height, width } = useScreenSize();
+
+  const circleBackgroundColor = variant === "dark" ? "#A99CFE" : "#EFE7FF";
+  const editCircleBackgroundColor = variant === "dark" ? "#A99CFE" : "#EFE7FF";
+
   return (
     <View>
       <WhiteCircle
@@ -18,7 +27,7 @@ const ProfilePicture = () => {
       >
         <View
           style={{
-            backgroundColor: "#EFE7FF",
+            backgroundColor: circleBackgroundColor,
             height: "92%",
             width: "92%",
             borderRadius: 100,
@@ -39,7 +48,7 @@ const ProfilePicture = () => {
       >
         <View
           style={{
-            backgroundColor: "#EFE7FF",
+            backgroundColor: editCircleBackgroundColor,
             height: "75%",
             width: "75%",
             borderRadius: 100,

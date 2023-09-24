@@ -6,11 +6,11 @@ import { Text } from "../../design-system/Text";
 import ArrowSVG from "@images/arrow-left.svg";
 import ProfilePicture from "../../components/ProfilePicture";
 import ShareExample from "../../components/buttons/ShareButton";
-import ShareSVG from "@images/share-icon.svg";
+import DudeSVG from "@images/do-small-black.svg";
 
-export const NewCommunityPage = ({
+export const NewCaregiverPage = ({
   navigation,
-}: NativeStackScreenProps<RootStackParamList, "NewCommunity">) => {
+}: NativeStackScreenProps<RootStackParamList, "NewCaregiver">) => {
   const { height, width } = useScreenSize();
   const message =
     "הצטרפו ל-do care כדי לעזור מכל הלב במה שהאנשים הקרובים אליכם באמת צריכים";
@@ -27,27 +27,28 @@ export const NewCommunityPage = ({
         <ArrowSVG />
       </Pressable>
       <View style={{ alignItems: "center" }}>
-        <ProfilePicture variant="light" />
+        <ProfilePicture variant="dark" />
         <View
           style={{
             width: width * 0.96,
             height: height * 0.6,
-            backgroundColor: "#EFE7FF",
+            backgroundColor: "#A99CFE",
             borderRadius: 16,
             borderWidth: 1,
             borderColor: "#1F1F1F",
             marginTop: height * 0.1,
           }}
         >
-          <Text
-            style={{
-              fontSize: 16,
-              marginTop: height * 0.04,
-              marginRight: width * 0.08,
-            }}
-          >
-            משתתפים
-          </Text>
+          <View style={{ alignItems: "center" }}>
+            <Text
+              style={{
+                fontSize: 30,
+                marginTop: height * 0.03,
+              }}
+            >
+              קייר גיבר'ז
+            </Text>
+          </View>
 
           <ShareExample
             style={{
@@ -55,14 +56,14 @@ export const NewCommunityPage = ({
               marginLeft: width * 0.78,
             }}
             message={message}
-            svgImage={<ShareSVG />}
+            svgImage={<DudeSVG />}
           />
           <Text
             variant="secondary"
             style={{
               fontSize: 16,
               position: "absolute",
-              marginTop: height * 0.465,
+              marginTop: height * 0.45,
               marginLeft: width * 0.07,
             }}
           >
