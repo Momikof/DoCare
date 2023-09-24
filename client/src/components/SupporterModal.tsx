@@ -2,6 +2,7 @@ import { View } from "react-native";
 import { Button, TextInput } from "@design-system";
 import { Formik } from "formik";
 import { useScreenSize } from "@hooks";
+import AddContactSVG from "@images/add-contact.svg";
 
 import * as Yup from "yup";
 import "yup-phone";

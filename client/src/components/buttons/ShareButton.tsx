@@ -1,11 +1,13 @@
 import React from "react";
-import { Alert, Share } from "react-native";
-import { Button } from "@design-system";
+import { Alert, Pressable, Share } from "react-native";
+import { Button, Text } from "@design-system";
 import { useScreenSize } from "@hooks";
 import { View } from "react-native";
+import ShareSVG from "@images/share-icon.svg";
+import { WhiteCircle } from "../WhiteCircle";
 
 const ShareExample = () => {
-  const { height } = useScreenSize();
+  const { height, width } = useScreenSize();
   const onShare = async () => {
     try {
       const result = await Share.share({
@@ -26,12 +28,18 @@ const ShareExample = () => {
     }
   };
   return (
-    <View style={{ alignItems: "center" }}>
-      <Button
-        text="ספר לחברים"
-        onPress={onShare}
-        style={{ marginTop: height * 0.1, backgroundColor: "#FFFEF9" }}
-      />
+    <View>
+      <Pressable onPress={onShare}>
+        <WhiteCircle
+          size={width * 0.13}
+          style={{
+            marginTop: height * 0.34,
+            marginLeft: width * 0.78,
+          }}
+        >
+          <ShareSVG />
+        </WhiteCircle>
+      </Pressable>
     </View>
   );
 };

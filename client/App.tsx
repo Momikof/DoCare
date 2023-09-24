@@ -11,6 +11,7 @@ import {
   SignInPage,
   SignUpPage,
 } from "@pages";
+import { NewCommunityPage } from "./src/pages/GroupPages/NewCommunityPage";
 
 export default function App() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -36,6 +37,7 @@ export default function App() {
           <Stack.Screen name="SignUp" component={SignUpPage} />
           <Stack.Screen name="SignIn" component={SignInPage} />
           <Stack.Screen name="EmailSignUp" component={EmailSignUpPage} />
+          <Stack.Screen name="NewCommunity" component={NewCommunityPage} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
