@@ -7,4 +7,5 @@ export type RootStackParamList = {
   EmailSignUp: undefined;
   NewCommunity: undefined;
   NewCaregiver: undefined;
+  WaitingAccept: undefined;
 };

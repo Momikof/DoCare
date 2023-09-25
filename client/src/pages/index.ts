@@ -5,3 +5,4 @@ export * from "./AuthenticationPages/SignInPage";
 export * from "./AuthenticationPages/SignUpPage";
 export * from "./GroupPages/NewCaregiverPage";
 export * from "./GroupPages/NewCommunityPage";
+export * from "./GroupPages/WaitingAcceptPage";
