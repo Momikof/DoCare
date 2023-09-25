@@ -53,6 +53,7 @@ export const RolePage = ({
         />
         <CaregiverModal
           onPressGroup={onPressGroup}
+          onSignSupporter={onSignSupporter}
           isVisible={isCaregiverVisible}
           setIsVisible={setCaregiverIsVisible}
         />

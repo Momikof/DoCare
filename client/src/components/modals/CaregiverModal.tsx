@@ -9,12 +9,14 @@ import { GestureResponderEvent } from "react-native";
 
 type CaregiverModalProps = {
   onPressGroup: (event: GestureResponderEvent) => void;
+  onSignSupporter: (event: GestureResponderEvent) => void;
   isVisible: boolean;
   setIsVisible: (isVisible: boolean) => void;
 };
 
 export function CaregiverModal({
   onPressGroup,
+  onSignSupporter,
   isVisible,
   setIsVisible,
 }: CaregiverModalProps) {
@@ -55,8 +57,10 @@ export function CaregiverModal({
               marginLeft: width * 0.08,
             }}
           >
-            <Text variant="secondary">הצתרף לקבוצת</Text>
-            <Text variant="secondary">טיפול קיימת</Text>
+            <Pressable onPress={onSignSupporter}>
+              <Text variant="secondary">הצתרף לקבוצת</Text>
+              <Text variant="secondary">טיפול קיימת</Text>
+            </Pressable>
           </View>
 
           <CreateGroupSVG

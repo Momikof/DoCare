@@ -7,6 +7,7 @@ import ArrowSVG from "@images/arrow-left.svg";
 import ProfilePicture from "../../components/ProfilePicture";
 import ShareExample from "../../components/buttons/ShareButton";
 import ShareSVG from "@images/share-icon.svg";
+import ParticipantIcon from "../../components/ParticipantIcon";
 
 export const NewCommunityPage = ({
   navigation,
