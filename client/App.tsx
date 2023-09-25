@@ -12,7 +12,10 @@ import {
   RolePage,
   SignInPage,
   SignUpPage,
+  
 } from "@pages";
+import { config, GluestackUIProvider } from "@gluestack-ui/themed"
+import { TasksPage } from "./src/pages/caregiver/tasks/tasksPage";
 
 export default function App() {
   useEffect(() => {
@@ -22,7 +25,7 @@ export default function App() {
     };
   }, []);
   
-  const Stack = createNativeStackNavigator<RootStackParamList>();
+  const {Screen, Group, Navigator} = createNativeStackNavigator<RootStackParamList>();
 
   const [isFontsLoaded] = useFonts(customFonts);
 
@@ -32,21 +35,21 @@ export default function App() {
 
   // To learn more about navigation: https://reactnavigation.org/
   return (
-    <>
+    <GluestackUIProvider config={config.theme}>
       <StatusBar />
       <NavigationContainer>
-        <Stack.Navigator
+        <Navigator
           screenOptions={{
             headerShown: false,
           }}
         >
-          <Stack.Screen name="Home" component={HomePage} />
-          <Stack.Screen name="Roles" component={RolePage} />
-          <Stack.Screen name="SignUp" component={SignUpPage} />
-          <Stack.Screen name="SignIn" component={SignInPage} />
-          <Stack.Screen name="EmailSignUp" component={EmailSignUpPage} />
-        </Stack.Navigator>
+          <Screen name="Home" component={TasksPage} />
+          <Screen name="Roles" component={RolePage} />
+          <Screen name="SignUp" component={SignUpPage} />
+          <Screen name="SignIn" component={SignInPage} />
+          <Screen name="EmailSignUp" component={EmailSignUpPage} />
+        </Navigator>
       </NavigationContainer>
-    </>
+    </GluestackUIProvider>
   );
 }
