@@ -5,7 +5,7 @@ import { useScreenSize } from "@hooks";
 import { View } from "react-native";
 import { SmallLogo, SupporterModal, CaregiverModal } from "@components";
 import React, { useState } from "react";
-import CoupleSVG from "@images/couple.svg";
+import CoupleSVG from "@images/rain-couple.svg";
 
 export const RolePage = ({
   navigation,
@@ -22,15 +22,25 @@ export const RolePage = ({
     setCaregiverIsVisible(true);
   };
 
+  const onPressGroup = () => {
+    navigation.navigate("NewCommunity");
+  };
+
   return (
     <View>
       <SmallLogo align={"left"} />
       <View style={{ alignItems: "center" }}>
-        <CoupleSVG style={{ marginTop: height * 0.23 }} />
+        <CoupleSVG
+          style={{
+            marginTop: height * 0.14,
+            maxWidth: width * 0.6,
+            maxHeight: height * 0.55,
+          }}
+        />
         <Button
           text="כניסה כ- CAREGIVER"
           onPress={onSignCaregiver}
-          style={{ marginTop: height * 0.18, backgroundColor: "#A99CFE" }}
+          style={{ marginTop: height * 0.12, backgroundColor: "#A99CFE" }}
         />
         <Button
           text="הרשמה כתומך"
@@ -42,6 +52,8 @@ export const RolePage = ({
           setIsVisible={setSupporterIsVisible}
         />
         <CaregiverModal
+          onPressGroup={onPressGroup}
+          onSignSupporter={onSignSupporter}
           isVisible={isCaregiverVisible}
           setIsVisible={setCaregiverIsVisible}
         />
