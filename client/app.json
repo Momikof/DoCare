@@ -5,10 +5,13 @@
     "slug": "DoCare",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/logo.png",
+    "experiments": {
+      "tsconfigPaths": true
+    },
+    "icon": "./src/assets/images/logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/images/logo.png",
+      "image": "./src/assets/images/logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -20,12 +23,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/logo.png",
+        "foregroundImage": "./src/assets/images/logo.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
-      "favicon": "./assets/images/logo.png"
+      "favicon": "./src/assets/images/logo.png"
     }
   }
 }
