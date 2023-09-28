@@ -6,7 +6,7 @@ import { SignUpButton } from "@components";
 import { useCallback } from "react";
 import { View } from "react-native";
 import LogoSVG from "@images/logo.svg";
-import { CountryPicker } from "react-native-country-codes-picker";
+import { Calender } from "../components/calender/Calender";
 
 export const HomePage = ({
   navigation,
@@ -14,7 +14,7 @@ export const HomePage = ({
   const { height } = useScreenSize();
 
   const onSignUpClick = useCallback(
-    () => navigation.navigate("Phone"),
+    () => navigation.navigate("Roles"),
     [navigation]
   );
 
