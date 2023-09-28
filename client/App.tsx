@@ -1,14 +1,22 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Text } from "./src/design-system";
-import { HomePage } from "./src/pages/HomePage";
 import { useFonts } from "expo-font";
-import { SignUpPage } from "./src/pages/SignUpPage";
-import { RootStackParamList } from "./src/types/RootStackParamList ";
-import { customFonts } from "./src/utils/customFonts";
 import { useEffect } from "react";
 import { coolDownAsync, warmUpAsync } from "expo-web-browser";
-
+import { RootStackParamList } from "@types";
+import { customFonts } from "@utils";
+import { StatusBar } from "react-native";
+import {
+  EmailSignUpPage,
+  HomePage,
+  RolePage,
+  SignInPage,
+  SignUpPage,
+  NewCommunityPage,
+  NewCaregiverPage,
+  WaitingAcceptPage,
+  PhonePage,
+} from "@pages";
 export default function App() {
   useEffect(() => {
     warmUpAsync();
@@ -22,24 +30,30 @@ export default function App() {
   const [isFontsLoaded] = useFonts(customFonts);
 
   if (!isFontsLoaded) {
-    return <Text>Loading...</Text>;
+    return <></>;
   }
 
+  // To learn more about navigation: https://reactnavigation.org/
   return (
-    // To learn more about navigation: https://reactnavigation.org/
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="Home" component={HomePage} />
-        <Stack.Screen
-          name="SignUp"
-          component={SignUpPage}
-          initialParams={{ isCareGiver: false }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <>
+      <StatusBar />
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="Home" component={HomePage} />
+          <Stack.Screen name="Roles" component={RolePage} />
+          <Stack.Screen name="SignUp" component={SignUpPage} />
+          <Stack.Screen name="SignIn" component={SignInPage} />
+          <Stack.Screen name="EmailSignUp" component={EmailSignUpPage} />
+          <Stack.Screen name="NewCommunity" component={NewCommunityPage} />
+          <Stack.Screen name="NewCaregiver" component={NewCaregiverPage} />
+          <Stack.Screen name="WaitingAccept" component={WaitingAcceptPage} />
+          <Stack.Screen name="Phone" component={PhonePage} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
   );
 }
