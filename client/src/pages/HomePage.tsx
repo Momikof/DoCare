@@ -6,7 +6,7 @@ import { SignUpButton } from "@components";
 import { useCallback } from "react";
 import { View } from "react-native";
 import LogoSVG from "@images/logo.svg";
-import { CountryPicker } from "react-native-country-codes-picker";
+import { Calender } from "../components/calender/Calender";
 
 export const HomePage = ({
   navigation,
@@ -20,6 +20,7 @@ export const HomePage = ({
 
   return (
     <View style={{ alignItems: "center" }}>
+      <Calender></Calender>
       {/* <LogoSVG style={{ marginTop: height * 0.25 }} />
       <Text style={{ marginTop: height * 0.075 }}>היי, ברוכים הבאים (:</Text>
       <View style={{ marginTop: height * 0.015, alignItems: "center" }}>
@@ -32,6 +33,7 @@ export const HomePage = ({
         style={{ marginTop: height * 0.1, backgroundColor: "#FFFEF9" }}
       />
       <SignUpButton onClick={onSignUpClick} /> */}
+
     </View>
   );
 };
