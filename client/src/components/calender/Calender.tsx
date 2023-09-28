@@ -9,19 +9,20 @@ const CALENDER_TITLE = 'לו ח שנה';
 const DATE_FORNAT = 'DD-MM-YYYY';
 
 export const Calender = () => {
-    const [selectedStartDate, setSelectedStartDate] = useState<any>();
-    const startDate = selectedStartDate
-      ? selectedStartDate.format(DATE_FORNAT).toString()
+    const [selectedDate, setSelectedDate] = useState<any>();
+    const formatSelectedDate = selectedDate
+      ? selectedDate.format(DATE_FORNAT).toString()
       : '';
-  
+
     return (
         <View >
           <Text></Text>
           <Text>{CALENDER_TITLE}</Text>
           <Text></Text>
         <StatusBar style="auto" />
-        <CalendarPicker onDateChange={setSelectedStartDate} />
-        <Text >Selected date: {startDate}</Text>
+        <CalendarPicker onDateChange={setSelectedDate} />
+        <Text >Selected date: {formatSelectedDate}</Text>
+        {/* {showTasksOnSelectedDay(selectedDate)} */}
       </View>
     );  
 }
