@@ -6,6 +6,7 @@ import { SignUpButton } from "@components";
 import { useCallback } from "react";
 import { View } from "react-native";
 import LogoSVG from "@images/logo.svg";
+import { CountryPicker } from "react-native-country-codes-picker";
 
 export const HomePage = ({
   navigation,
@@ -19,7 +20,7 @@ export const HomePage = ({
 
   return (
     <View style={{ alignItems: "center" }}>
-      <LogoSVG style={{ marginTop: height * 0.25 }} />
+      {/* <LogoSVG style={{ marginTop: height * 0.25 }} />
       <Text style={{ marginTop: height * 0.075 }}>היי, ברוכים הבאים (:</Text>
       <View style={{ marginTop: height * 0.015, alignItems: "center" }}>
         <Text variant="secondary">הגעתם לDOCARE</Text>
@@ -30,7 +31,7 @@ export const HomePage = ({
         onPress={() => navigation.navigate("SignIn")}
         style={{ marginTop: height * 0.1, backgroundColor: "#FFFEF9" }}
       />
-      <SignUpButton onClick={onSignUpClick} />
+      <SignUpButton onClick={onSignUpClick} /> */}
     </View>
   );
 };
