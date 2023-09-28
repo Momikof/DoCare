@@ -13,6 +13,7 @@ import {
   NewCommunityPage,
   NewCaregiverPage,
   WaitingAcceptPage,
+  PhonePage,
 } from "@pages";
 export default function App() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -41,6 +42,7 @@ export default function App() {
           <Stack.Screen name="NewCommunity" component={NewCommunityPage} />
           <Stack.Screen name="NewCaregiver" component={NewCaregiverPage} />
           <Stack.Screen name="WaitingAccept" component={WaitingAcceptPage} />
+          <Stack.Screen name="Phone" component={PhonePage} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
