@@ -10,7 +10,7 @@ const CALENDER_TITLE = 'לו ח שנה'
 export const Calender = () => {
     const [selectedStartDate, setSelectedStartDate] = useState<any>();
     const startDate = selectedStartDate
-      ? selectedStartDate.format('YYYY-MM-DD').toString()
+      ? selectedStartDate.format('DD-MM-YYYY').toString()
       : '';
   
     return (
