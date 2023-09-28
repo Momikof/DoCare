@@ -4,6 +4,7 @@ export type RootStackParamList = {
   SignUp: undefined;
   SignIn: undefined;
   Roles: undefined;
+  SMS: undefined;
   EmailSignUp: undefined;
   NewCommunity: undefined;
   NewCaregiver: undefined;

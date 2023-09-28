@@ -16,6 +16,7 @@ import {
   NewCaregiverPage,
   WaitingAcceptPage,
   PhonePage,
+  SMSPage,
 } from "@pages";
 export default function App() {
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function App() {
       coolDownAsync();
     };
   }, []);
-  
+
   const Stack = createNativeStackNavigator<RootStackParamList>();
 
   const [isFontsLoaded] = useFonts(customFonts);
@@ -52,6 +53,7 @@ export default function App() {
           <Stack.Screen name="NewCaregiver" component={NewCaregiverPage} />
           <Stack.Screen name="WaitingAccept" component={WaitingAcceptPage} />
           <Stack.Screen name="Phone" component={PhonePage} />
+          <Stack.Screen name="SMS" component={SMSPage} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
