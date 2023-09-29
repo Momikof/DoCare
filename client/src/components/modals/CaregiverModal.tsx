@@ -1,16 +1,21 @@
-import { View, useWindowDimensions } from "react-native";
+import { Pressable, View, useWindowDimensions } from "react-native";
 import { Text } from "@design-system";
 import { ReactNativeModal } from "react-native-modal";
 import CreateGroupSVG from "@images/create-group.svg";
 import JoinGroupSVG from "@images/join-group.svg";
 import BabyCoupleSVG from "@images/baby-couple.svg";
+import { GestureResponderEvent } from "react-native";
 
 type CaregiverModalProps = {
+  onPressGroup: (event: GestureResponderEvent) => void;
+  onSignSupporter: (event: GestureResponderEvent) => void;
   isVisible: boolean;
   setIsVisible: (isVisible: boolean) => void;
 };
 
 export function CaregiverModal({
+  onPressGroup,
+  onSignSupporter,
   isVisible,
   setIsVisible,
 }: CaregiverModalProps) {
@@ -51,8 +56,10 @@ export function CaregiverModal({
               marginLeft: width * 0.08,
             }}
           >
-            <Text variant="secondary">הצתרף לקבוצת</Text>
-            <Text variant="secondary">טיפול קיימת</Text>
+            <Pressable onPress={onSignSupporter}>
+              <Text variant="secondary">הצתרף לקבוצת</Text>
+              <Text variant="secondary">טיפול קיימת</Text>
+            </Pressable>
           </View>
 
           <CreateGroupSVG
@@ -63,6 +70,7 @@ export function CaregiverModal({
               marginTop: height * 0.05,
             }}
           />
+
           <View
             style={{
               position: "absolute",
@@ -70,8 +78,10 @@ export function CaregiverModal({
               marginLeft: width * 0.58,
             }}
           >
-            <Text variant="secondary">פתח קבוצת</Text>
-            <Text variant="secondary">טיפול חדשה</Text>
+            <Pressable onPress={onPressGroup}>
+              <Text variant="secondary">פתח קבוצת</Text>
+              <Text variant="secondary">טיפול חדשה</Text>
+            </Pressable>
           </View>
         </View>
         <BabyCoupleSVG

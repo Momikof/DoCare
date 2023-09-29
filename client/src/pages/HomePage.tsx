@@ -5,6 +5,7 @@ import { SignUpButton } from "@components";
 import { useCallback } from "react";
 import { View, useWindowDimensions } from "react-native";
 import LogoSVG from "@images/logo.svg";
+import { Calender } from "../components/calender/Calender";
 
 export const HomePage = ({
   navigation,

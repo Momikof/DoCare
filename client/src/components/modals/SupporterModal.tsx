@@ -1,7 +1,7 @@
 import { View, useWindowDimensions } from "react-native";
 import { Button, TextInput } from "@design-system";
 import { Formik } from "formik";
-
+import AddContactSVG from "@images/add-contact.svg";
 import * as Yup from "yup";
 import "yup-phone";
 import { ReactNativeModal } from "react-native-modal";
@@ -45,7 +45,7 @@ export function SupporterModal({
           <View
             style={{
               backgroundColor: "#EFE7FF",
-              alignItems: "center",
+
               width: width * 0.95,
               height: height * 0.35,
               borderRadius: 32,
@@ -53,30 +53,39 @@ export function SupporterModal({
               borderColor: "#1F1F1F",
             }}
           >
-            <TextInput
-              style={{ marginTop: height * 0.05 }}
-              placeholder="איך קוראים לך?"
-              onChangeText={props.handleChange("name")}
-              value={props.values.name}
-            />
-            <TextInput
-              keyboardType="numeric"
-              style={{ marginTop: height * 0.015 }}
-              placeholder="מס' הטלפון של הCAREGIVER"
-              onChangeText={props.handleChange("number")}
-              value={props.values.number}
-            />
+            <View style={{ alignItems: "center" }}>
+              <TextInput
+                style={{ marginTop: height * 0.05 }}
+                placeholder="איך קוראים לך?"
+                onChangeText={props.handleChange("name")}
+                value={props.values.name}
+              />
+              <TextInput
+                keyboardType="numeric"
+                style={{ marginTop: height * 0.01 }}
+                placeholder="מס' הטלפון של הCAREGIVER"
+                onChangeText={props.handleChange("number")}
+                value={props.values.number}
+              />
 
-            <Button
-              text="המשך :)"
-              onPress={() => {
-                props.submitForm();
-              }}
+              <Button
+                text="המשך (:"
+                onPress={() => {
+                  props.submitForm();
+                }}
+                style={{
+                  marginTop: height * 0.035,
+                  backgroundColor: "#1F1F1F",
+                }}
+                textStyle={{ color: "#FFFEF9" }}
+              />
+            </View>
+            <AddContactSVG
               style={{
-                marginTop: height * 0.015,
-                backgroundColor: "#1F1F1F",
+                position: "absolute",
+                marginTop: height * 0.156,
+                marginLeft: width * 0.08,
               }}
-              textStyle={{ color: "#FFFEF9" }}
             />
           </View>
         )}

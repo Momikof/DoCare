@@ -1,15 +1,25 @@
 import React from "react";
-import { Alert, Share, useWindowDimensions } from "react-native";
+import { Alert, Pressable, Share, ViewStyle, useWindowDimensions } from "react-native";
 import { Button } from "@design-system";
 import { View } from "react-native";
+import { WhiteCircle } from "../WhiteCircle";
 
-const ShareExample = () => {
-  const { height } = useWindowDimensions();
+interface ShareExampleProps {
+  message: string;
+  svgImage: React.ReactNode;
+  style?: ViewStyle; // Style prop for custom styling
+}
+
+const ShareExample: React.FC<ShareExampleProps> = ({
+  message,
+  svgImage,
+  style,
+}) => {
+  const { height, width } = useWindowDimensions();
   const onShare = async () => {
     try {
       const result = await Share.share({
-        message:
-          "הצטרפו ל-do care כדי לעזור מכל הלב במה שהאנשים הקרובים אליכם באמת צריכים",
+        message,
       });
       if (result.action === Share.sharedAction) {
         if (result.activityType) {
@@ -20,17 +30,16 @@ const ShareExample = () => {
       } else if (result.action === Share.dismissedAction) {
         // dismissed
       }
-    } catch (error: any) {
-      Alert.alert(error.message);
+    } catch (error) {
+      Alert.alert((error as Error).message);
     }
   };
+
   return (
-    <View style={{ alignItems: "center" }}>
-      <Button
-        text="ספר לחברים"
-        onPress={onShare}
-        style={{ marginTop: height * 0.1, backgroundColor: "#FFFEF9" }}
-      />
+    <View style={style}>
+      <Pressable onPress={onShare}>
+        <WhiteCircle size={width * 0.13}>{svgImage}</WhiteCircle>
+      </Pressable>
     </View>
   );
 };
