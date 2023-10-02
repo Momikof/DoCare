@@ -17,6 +17,8 @@ import {
   WaitingAcceptPage,
   PhonePage,
 } from "@pages";
+
+import MyTabs from "./src/components/TabNavigator";
 export default function App() {
   useEffect(() => {
     warmUpAsync();
@@ -24,7 +26,7 @@ export default function App() {
       coolDownAsync();
     };
   }, []);
-  
+
   const Stack = createNativeStackNavigator<RootStackParamList>();
 
   const [isFontsLoaded] = useFonts(customFonts);
@@ -38,21 +40,7 @@ export default function App() {
     <>
       <StatusBar />
       <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerShown: false,
-          }}
-        >
-          <Stack.Screen name="Home" component={HomePage} />
-          <Stack.Screen name="Roles" component={RolePage} />
-          <Stack.Screen name="SignUp" component={SignUpPage} />
-          <Stack.Screen name="SignIn" component={SignInPage} />
-          <Stack.Screen name="EmailSignUp" component={EmailSignUpPage} />
-          <Stack.Screen name="NewCommunity" component={NewCommunityPage} />
-          <Stack.Screen name="NewCaregiver" component={NewCaregiverPage} />
-          <Stack.Screen name="WaitingAccept" component={WaitingAcceptPage} />
-          <Stack.Screen name="Phone" component={PhonePage} />
-        </Stack.Navigator>
+        <MyTabs />
       </NavigationContainer>
     </>
   );
