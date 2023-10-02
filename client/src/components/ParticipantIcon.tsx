@@ -1,8 +1,7 @@
 import React from "react";
-import { View, StyleProp, ViewStyle } from "react-native";
+import { View, StyleProp, ViewStyle, useWindowDimensions } from "react-native";
 import { WhiteCircle } from "./WhiteCircle";
 import { Text } from "../design-system/Text";
-import { useScreenSize } from "@hooks";
 import LineSVG from "@images/tiny-line.svg";
 
 interface ParticipantIconProps {
@@ -16,7 +15,7 @@ const ParticipantIcon: React.FC<ParticipantIconProps> = ({
   svgComponent,
   style,
 }) => {
-  const { height, width } = useScreenSize();
+  const { height, width } = useWindowDimensions();
 
   return (
     <View style={[{ alignItems: "center" }, style]}>

@@ -1,8 +1,7 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Button, Text } from "@design-system";
 import { RootStackParamList } from "@types";
-import { useScreenSize } from "@hooks";
-import { Pressable, View } from "react-native";
+import { Pressable, View, useWindowDimensions } from "react-native";
 import React, { useState } from "react";
 import ArrowSVG from "@images/arrow-right.svg";
 import { SmallLogo } from "@components";
@@ -12,6 +11,7 @@ import {
   useBlurOnFulfill,
   useClearByFocusCell,
 } from "react-native-confirmation-code-field";
+// @ts-ignore
 import SlideToConfirm from "rn-slide-to-confirm";
 
 const CELL_COUNT = 4;
@@ -19,7 +19,7 @@ const CELL_COUNT = 4;
 export const SMSPage = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList, "SMS">) => {
-  const { height, width } = useScreenSize();
+  const { height, width } = useWindowDimensions();
   const [value, setValue] = useState("");
   const [sliderState, setSliderState] = useState(false);
   const ref = useBlurOnFulfill({ value, cellCount: CELL_COUNT });
@@ -53,8 +53,8 @@ export const SMSPage = ({
         style={{
           paddingHorizontal: 16,
           marginTop: height * 0.09,
-        }}
-      >
+        }} 
+        >
         <CodeField
           ref={ref}
           {...props}

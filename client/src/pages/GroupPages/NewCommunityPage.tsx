@@ -1,7 +1,6 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "@types";
-import { useScreenSize } from "@hooks";
-import { Pressable, View } from "react-native";
+import { Pressable, View, useWindowDimensions } from "react-native";
 import { Text } from "../../design-system/Text";
 import ArrowSVG from "@images/arrow-left.svg";
 import ProfilePicture from "../../components/ProfilePicture";
@@ -12,7 +11,7 @@ import ParticipantIcon from "../../components/ParticipantIcon";
 export const NewCommunityPage = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList, "NewCommunity">) => {
-  const { height, width } = useScreenSize();
+  const { height, width } = useWindowDimensions();
   const message =
     "הצטרפו ל-do care כדי לעזור מכל הלב במה שהאנשים הקרובים אליכם באמת צריכים";
   return (

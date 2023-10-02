@@ -1,8 +1,7 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Button, Text } from "@design-system";
 import { RootStackParamList } from "@types";
-import { useScreenSize } from "@hooks";
-import { Pressable, View, TextInput } from "react-native";
+import { Pressable, View, TextInput, useWindowDimensions } from "react-native";
 import React, { useState } from "react";
 import { CountryItem, CountryPicker } from "react-native-country-codes-picker";
 import ArrowSVG from "@images/arrow-right.svg";
@@ -18,7 +17,7 @@ const reviewSchema = Yup.object().shape({
 export const PhonePage = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList, "Phone">) => {
-  const { height, width } = useScreenSize();
+  const { height, width } = useWindowDimensions();
 
   const [show, setShow] = useState(false);
   const [countryCode, setCountryCode] = useState<CountryItem>();

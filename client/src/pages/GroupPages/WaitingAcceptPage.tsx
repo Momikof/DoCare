@@ -1,7 +1,6 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "@types";
-import { useScreenSize } from "@hooks";
-import { Pressable, View } from "react-native";
+import { Pressable, View, useWindowDimensions } from "react-native";
 import { Text } from "../../design-system/Text";
 import PersonSVG from "@images/waiting-person.svg";
 import LogoSVG from "@images/logo.svg";
@@ -11,7 +10,7 @@ import { Button } from "../../design-system/Button";
 export const WaitingAcceptPage = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList, "WaitingAccept">) => {
-  const { height, width } = useScreenSize();
+  const { height, width } = useWindowDimensions();
   return (
     <View style={{ alignItems: "center" }}>
       <LogoSVG

@@ -1,6 +1,5 @@
 import React from "react";
-import { useScreenSize } from "@hooks";
-import { View, ViewStyle } from "react-native";
+import { View, useWindowDimensions } from "react-native";
 import { WhiteCircle } from "@components";
 import DudeSVG from "@images/do-black.svg";
 import EditSVG from "@images/edit-icon.svg";
@@ -10,7 +9,7 @@ interface ProfilePictureProps {
 }
 
 const ProfilePicture: React.FC<ProfilePictureProps> = ({ variant }) => {
-  const { height, width } = useScreenSize();
+  const { height, width } = useWindowDimensions();
 
   const circleBackgroundColor = variant === "dark" ? "#A99CFE" : "#EFE7FF";
   const editCircleBackgroundColor = variant === "dark" ? "#A99CFE" : "#EFE7FF";
