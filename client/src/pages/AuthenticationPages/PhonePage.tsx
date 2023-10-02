@@ -74,8 +74,8 @@ export const PhonePage = ({
           initialValues={{ name: "", number: "" }}
           validationSchema={reviewSchema}
           onSubmit={(values, actions) => {
-            // actions.resetForm();
             console.log(values);
+            navigation.navigate("SMS");
           }}
         >
           {(props) => (
@@ -128,9 +128,11 @@ export const PhonePage = ({
       <CountryPicker
         lang="he"
         show={show}
+        showOnly={["IL"]}
         // when picker button press you will get the country object with dial code
         pickerButtonOnPress={(item) => {
           setCountryCode(item);
+          console.log(item);
           setShow(false);
         }}
       />

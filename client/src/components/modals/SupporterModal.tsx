@@ -3,7 +3,6 @@ import { Button, TextInput } from "@design-system";
 import { Formik } from "formik";
 import { useScreenSize } from "@hooks";
 import AddContactSVG from "@images/add-contact.svg";
-
 import * as Yup from "yup";
 import "yup-phone";
 import { ReactNativeModal } from "react-native-modal";
@@ -39,7 +38,6 @@ export function SupporterModal({
         initialValues={{ name: "", number: "" }}
         validationSchema={reviewSchema}
         onSubmit={(values, actions) => {
-          // actions.resetForm();
           console.log(values);
         }}
       >

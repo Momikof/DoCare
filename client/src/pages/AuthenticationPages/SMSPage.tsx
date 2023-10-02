@@ -82,30 +82,42 @@ export const SMSPage = ({
             </Text>
           )}
         />
-        <SlideToConfirm
-          unconfimredTipText={"החלק לאישור ואת/ה כבר שם!"}
-          unconfirmedTipTextStyle={{
-            color: "white",
-            fontSize: 18,
-          }}
-          confirmedTipText={"מאושר"}
-          confirmedTipTextStyle={{
-            color: "white",
-            fontSize: 18,
-          }}
-          state={sliderState}
-          onSlideConfirmed={() => setSliderState(true)}
-          sliderStyle={{
-            width: width * 0.95,
-            justifyContent: "center",
-            padding: 16,
-            borderWidth: 1,
-            borderColor: "#1F1F1F",
-            borderRadius: 10,
-            backgroundColor: "#1F1F1F",
-            overflow: "hidden",
-          }}
-        />
+        <View style={{ alignItems: "center", marginTop: height * 0.05 }}>
+          <SlideToConfirm
+            unconfimredTipText={"החלק לאישור ואת/ה כבר שם!"}
+            unconfirmedTipTextStyle={{
+              fontSize: 16,
+              fontFamily: "Anomalia",
+              color: "#FFFEF9",
+              lineHeight: 20,
+            }}
+            confirmedTipText={"מאושר"}
+            confirmedTipTextStyle={{
+              fontSize: 16,
+              fontFamily: "Anomalia",
+              color: "#FFFEF9",
+              lineHeight: 20,
+            }}
+            state={sliderState}
+            onSlideConfirmed={() => {
+              setSliderState(true);
+              navigation.navigate("Roles");
+            }}
+            sliderStyle={{
+              width: width * 0.95,
+              justifyContent: "center",
+              padding: 10,
+              borderWidth: 1,
+              borderColor: "#1F1F1F",
+              borderRadius: 10,
+              backgroundColor: "#1F1F1F",
+              overflow: "hidden",
+            }}
+          />
+          <Text style={{ marginTop: height * 0.05 }} variant="secondary">
+            הקוד ישלח מחדש בעוד 00:20
+          </Text>
+        </View>
       </View>
     </View>
   );

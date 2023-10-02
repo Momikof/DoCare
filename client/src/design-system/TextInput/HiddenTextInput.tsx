@@ -30,7 +30,7 @@ export const HiddenTextInput = forwardRef<
           zIndex: 1,
           padding: 12,
           top: "35%",
-          right: 16,
+          left: 16,
         }}
         onPress={onEyePress}
       >
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     paddingTop: 15,
     paddingBottom: 15,
-    paddingLeft: 16,
+    paddingHorizontal: 16,
     lineHeight: 20,
     letterSpacing: -0.3,
     backgroundColor: "#FFFEF9",
