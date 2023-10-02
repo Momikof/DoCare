@@ -14,7 +14,7 @@ interface TaskProps {
 
 export const Task: React.FC<TaskProps> = (props) => {
     const {title, location, isUrgent, assignedId} = props;
-    //const {isCaregiver} = useIsCaregiverStore();
+    const {isCaregiver} = useIsCaregiverStore();
 
     return (
         <>
@@ -22,6 +22,9 @@ export const Task: React.FC<TaskProps> = (props) => {
             <Text>{title}</Text>
             <Text>{location}</Text>
             <Text></Text>
+            {
+                isCaregiver ? "" : ""
+            }
             {
                // assignedId ? <ParticipantIcon/> : ""
             }
