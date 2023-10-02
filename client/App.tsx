@@ -16,6 +16,7 @@ import {
   NewCaregiverPage,
   WaitingAcceptPage,
   PhonePage,
+  SMSPage,
 } from "@pages";
 
 import { config, GluestackUIProvider } from "@gluestack-ui/themed"

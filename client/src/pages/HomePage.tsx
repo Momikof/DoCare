@@ -13,7 +13,7 @@ export const HomePage = ({
   const { height } = useWindowDimensions();
 
   const onSignUpClick = useCallback(
-    () => navigation.navigate("Roles"),
+    () => navigation.navigate("SignUp"),
     [navigation]
   );
 

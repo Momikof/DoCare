@@ -58,11 +58,11 @@ export const SignUpPage = ({
       </View>
 
       <View style={{ flexDirection: "row", marginTop: height * 0.075 }}>
-        <Text variant="secondary" style={{ fontSize: 14 }}>
-          כבר יש לך חשבון?{" "}
-        </Text>
         <Text variant="link" onPress={onAlreadySignedClick}>
           היכנס/י לאפליקציה
+        </Text>
+        <Text variant="secondary" style={{ fontSize: 14 }}>
+          כבר יש לך חשבון?{" "}
         </Text>
       </View>
     </View>

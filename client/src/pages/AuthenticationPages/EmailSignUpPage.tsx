@@ -50,6 +50,7 @@ export const EmailSignUpPage = ({
         validationSchema={reviewSchema}
         onSubmit={(values, actions) => {
           console.log(values);
+          navigation.navigate("Phone");
         }}
       >
         {(props) => (

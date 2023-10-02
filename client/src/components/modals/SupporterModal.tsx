@@ -37,7 +37,6 @@ export function SupporterModal({
         initialValues={{ name: "", number: "" }}
         validationSchema={reviewSchema}
         onSubmit={(values, actions) => {
-          // actions.resetForm();
           console.log(values);
         }}
       >
