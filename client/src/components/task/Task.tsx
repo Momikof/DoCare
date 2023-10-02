@@ -4,16 +4,19 @@ import { useIsCaregiverStore } from '../../stores/isCaregiver.store';
 import { Text } from '@design-system';
 import UrgentSVG from '@images/urgent.svg';
 import ParticipantIcon from '../ParticipantIcon';
+import { UserIcon } from '../UserIcon';
+import { AssignToTaskButton } from './AssignToTaskButton';
+import { ShareTaskButton } from './ShareTaskButton';
 
 interface TaskProps {
     title: string;
     location: string;
     isUrgent: boolean;
-    assignedId?: string;
+    assignedUserId?: string;
 }
 
 export const Task: React.FC<TaskProps> = (props) => {
-    const {title, location, isUrgent, assignedId} = props;
+    const {title, location, isUrgent, assignedUserId} = props;
     const {isCaregiver} = useIsCaregiverStore();
 
     return (
@@ -23,12 +26,21 @@ export const Task: React.FC<TaskProps> = (props) => {
             <Text>{location}</Text>
             <Text></Text>
             {
-                isCaregiver ? "" : ""
+                assignedUserId ?
+                <view>
+                    <UserIcon userId={assignedUserId}/>
+                </view> 
+                :
+                <view>
+                    <AssignToTaskButton/>
+                    {
+                        isCaregiver ? 
+                        <ShareTaskButton/>
+                        :
+                        <></>
+                    }
+                </view> 
             }
-            {
-                assignedId ? <div/> : <></>
-            }
-            
         </>
     );
 }

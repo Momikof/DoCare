@@ -20,7 +20,7 @@ import {
 } from "@pages";
 
 import { config, GluestackUIProvider } from "@gluestack-ui/themed"
-import { TasksPage } from "./src/pages/caregiver/tasks/tasksPage";
+import { TasksPage } from "./src/pages/caregiver/tasks/TasksPage";
 
 
 export default function App() {

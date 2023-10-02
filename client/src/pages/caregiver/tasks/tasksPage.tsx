@@ -9,6 +9,7 @@ import PeopleHugging from "@images/people-hugging.svg";
 import WhiteFadeOverlay from "@images/white-fade-overlay.svg";
 import { getDifferentRandomGreeting } from "../../../helpers/greetings";
 import { TasksCatagoryButton } from "../../../components/buttons/TasksCatagoryButton";
+import { Task } from "../../../components/task/Task";
 
 export const TasksPage = ({navigation}: NativeStackScreenProps<
   RootStackParamList,
@@ -44,6 +45,7 @@ export const TasksPage = ({navigation}: NativeStackScreenProps<
         <TasksCatagoryButton buttonText="כל המשימות" backgroundColor="#EFE7FF"/>
         <TasksCatagoryButton buttonText="משימות שביצעתי" backgroundColor="#A99CFE"/>
       </View>
+      <Task isUrgent={true} location="test" title="MOCK TASK" assignedUserId="123123"/>
     </View>
   );
 };
