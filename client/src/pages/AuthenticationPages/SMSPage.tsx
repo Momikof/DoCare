@@ -12,6 +12,7 @@ import {
   useBlurOnFulfill,
   useClearByFocusCell,
 } from "react-native-confirmation-code-field";
+//@ts-ignore
 import SlideToConfirm from "rn-slide-to-confirm";
 
 const CELL_COUNT = 4;

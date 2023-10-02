@@ -71,7 +71,7 @@ export const PhonePage = ({
         </Pressable>
 
         <Formik
-          initialValues={{ name: "", number: "" }}
+          initialValues={{ number: "" }}
           validationSchema={reviewSchema}
           onSubmit={(values, actions) => {
             console.log(values);
