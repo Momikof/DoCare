@@ -26,7 +26,7 @@ export const Task: React.FC<TaskProps> = (props) => {
                 isCaregiver ? "" : ""
             }
             {
-               // assignedId ? <ParticipantIcon/> : ""
+                assignedId ? <div/> : <></>
             }
             
         </>
