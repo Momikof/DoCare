@@ -1,7 +1,12 @@
 import { create } from 'zustand';
 
-export const useIsCaregiverStore = create(set => ({
-    isCaregiver: undefined,
+interface IsCaregiver {
+  isCaregiver: boolean;
+  setIsCaregiver: (isCaregiver: boolean) => void
+}
+
+export const useIsCaregiverStore = create<IsCaregiver>((set) => ({
+    isCaregiver: false,
     setIsCaregiver: (isCaregiver: boolean) => set({ isCaregiver })
   }));
   
