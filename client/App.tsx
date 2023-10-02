@@ -19,9 +19,8 @@ import {
   SMSPage,
 } from "@pages";
 
-import { config, GluestackUIProvider } from "@gluestack-ui/themed"
+import { config, GluestackUIProvider } from "@gluestack-ui/themed";
 import { TasksPage } from "./src/pages/caregiver/tasks/TasksPage";
-
 
 export default function App() {
   useEffect(() => {
@@ -49,7 +48,7 @@ export default function App() {
             headerShown: false,
           }}
         >
-          <Screen name="Home" component={HomePage} />
+          <Screen name="Home" component={TasksPage} />
           <Screen name="Roles" component={RolePage} />
           <Screen name="SignUp" component={SignUpPage} />
           <Screen name="SignIn" component={SignInPage} />
