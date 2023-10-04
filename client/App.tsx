@@ -1,6 +1,8 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
+import { useEffect } from "react";
+import { coolDownAsync, warmUpAsync } from "expo-web-browser";
 import { RootStackParamList } from "@types";
 import { customFonts } from "@utils";
 import { StatusBar } from "react-native";
@@ -13,8 +15,16 @@ import {
   NewCommunityPage,
   NewCaregiverPage,
   WaitingAcceptPage,
+  PhonePage,
 } from "@pages";
 export default function App() {
+  useEffect(() => {
+    warmUpAsync();
+    return () => {
+      coolDownAsync();
+    };
+  }, []);
+  
   const Stack = createNativeStackNavigator<RootStackParamList>();
 
   const [isFontsLoaded] = useFonts(customFonts);
@@ -41,6 +51,7 @@ export default function App() {
           <Stack.Screen name="NewCommunity" component={NewCommunityPage} />
           <Stack.Screen name="NewCaregiver" component={NewCaregiverPage} />
           <Stack.Screen name="WaitingAccept" component={WaitingAcceptPage} />
+          <Stack.Screen name="Phone" component={PhonePage} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

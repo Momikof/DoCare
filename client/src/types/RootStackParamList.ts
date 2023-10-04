@@ -8,4 +8,5 @@ export type RootStackParamList = {
   NewCommunity: undefined;
   NewCaregiver: undefined;
   WaitingAccept: undefined;
+  Phone: undefined;
 };

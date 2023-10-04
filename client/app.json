@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "DoCare",
     "name": "DoCare",
     "slug": "DoCare",
     "version": "1.0.0",
@@ -7,7 +8,6 @@
     "experiments": {
       "tsconfigPaths": true
     },
-    "scheme": "your-app-scheme",
     "icon": "./src/assets/images/logo.png",
     "userInterfaceStyle": "light",
     "splash": {
